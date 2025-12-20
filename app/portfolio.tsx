@@ -212,7 +212,7 @@ export default function Portfolio() {
         </div>
 
         {/* Design Explorations (heading outside the box). Placeholder gray box below for multiple designs */}
-        <h3 id="design-explorations" className="mt-20 mb-8 text-4xl font-medium text-gray-900 tracking-tighter">Recent Design Explorations</h3>
+        <h3 id="design-explorations" className="mt-20 mb-8 text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900 tracking-tighter">Recent Design Explorations</h3>
         <div className="bg-gray-50 rounded-2xl p-10">
           <Image src="/Images/Feature-Exploration.png" className="rounded-2xl" alt="Feature exploration" width={1200} height={700} />
         </div>
