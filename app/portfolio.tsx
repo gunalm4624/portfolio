@@ -153,7 +153,7 @@ export default function Portfolio() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3, ease: customEase }}
           >
-            <a href="/Gunal%20-%20Product%20Designer.pdf" download="Gunal - Product Designer.pdf" className="bg-black text-white px-8 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-900 transition cursor-pointer w-full sm:w-auto inline-block"> 
+            <a href="/Gunal%20-%20Product%20Designer.pdf" download="Gunal - Product Designer.pdf" className="bg-black text-white px-8 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-900 transition cursor-pointer w-full sm:w-auto inline-flex"> 
                 Download Resume
               </a>
             <CopyEmailButton />
