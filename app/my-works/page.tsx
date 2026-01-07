@@ -35,7 +35,7 @@ const MyWorks = () => {
     }, [])
 
     return (
-        <div className='bg-white p-4 pt-0 mt-32 max-w-[550px] mx-auto'>
+        <div id="my-works-section" className='bg-white p-4 pt-0 mt-32 max-w-[550px] mx-auto'>
             <div>
                 <h1 className='text-4xl font-semibold text-center tracking-tighter'>My Works</h1>
                 <p className='text-center text-[#171717]/80 mt-3'>Here are some of my recent projects..</p>

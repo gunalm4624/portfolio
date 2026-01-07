@@ -21,6 +21,24 @@ const PortfolioHero = () => {
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
+    const handleMyWorksClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        const myWorksSection = document.querySelector('#my-works-section');
+        if (myWorksSection) {
+            myWorksSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    const handleDownloadResume = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        const link = document.createElement('a');
+        link.href = '/Gunal - Product Designer.pdf';
+        link.download = 'Gunal - Product Designer.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     const logos = [
         { id: 1, viewBox: "0 0 88 22" },
         { id: 2, viewBox: "0 0 48 32" },
@@ -105,7 +123,8 @@ const PortfolioHero = () => {
                         {/* CTA Buttons */}
                         <div className="flex flex-wrap items-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
                             <a
-                                href="#sub"
+                                href="#my-works-section"
+                                onClick={handleMyWorksClick}
                                 className="group relative bg-[#3657FF] text-white rounded-full ps-6 pe-1 py-1 font-medium flex items-center gap-5 overflow-hidden"
                             >
                                 <span className="relative z-10">My Works</span>
@@ -116,7 +135,8 @@ const PortfolioHero = () => {
                             </a>
 
                             <a
-                                href="./projects"
+                                href="/Gunal - Product Designer.pdf"
+                                onClick={handleDownloadResume}
                                 className="group relative bg-[#f6f6f6] text-[#171717] rounded-full px-6 py-3.5 font-medium hover:bg-[#efefef] transition-colors"
                             >
                                 Download Resume
