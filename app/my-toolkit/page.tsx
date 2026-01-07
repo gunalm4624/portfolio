@@ -46,7 +46,7 @@ const MyToolkit = () => {
             name: 'Framer',
             description: 'No-code website builder',
             percentage: 70,
-            icon: <Image src="/Images/Framer-logo.svg" alt="Framer" width={62} height={62} />,
+            icon: <Image src="/Images/Framer-Logo.svg" alt="Framer" width={62} height={62} />,
             color: 'bg-blue-600'
         },
         {

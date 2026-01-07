@@ -45,7 +45,7 @@ const MyWorks = () => {
                 {/* Project 1 */}
                 <Link href='/my-works/private-banking-pg'>
                     <div className='mt-16 rounded-[40px] overflow-hidden relative cursor-pointer transition-transform hover:scale-[1.02]'>
-                        <img src="Images/Projects/BANK_1/Cover.png" alt="Private Banking PG" loading="eager" decoding="async" style={{ willChange: 'transform' }} />
+                        <img src="/Images/Projects/BANK_1/COVER.png" alt="Private Banking PG" loading="eager" decoding="async" style={{ willChange: 'transform' }} />
                         <div className='absolute bottom-1.5 left-1.5 right-1.5 bg-white ps-6 py-5.5 rounded-full'>
                             <h2 className='text-lg font-semibold tracking-tighter mb-6 leading-0'>Private Banking PG</h2>
                             <p className='text-[#171717]/80 text-sm m-0 leading-0'>Secure payments, built for banking.</p>
@@ -57,7 +57,7 @@ const MyWorks = () => {
                 {/* Project 2 */}
                 <Link href='/my-works/merchant-qc-portal'>
                     <div className='mt-8 rounded-[40px] overflow-hidden relative cursor-pointer transition-transform hover:scale-[1.02]'>
-                        <img src="Images/Projects/BANK_2/Cover.png" alt="Merchant QC Portal" loading="eager" decoding="async" style={{ willChange: 'transform' }} />
+                        <img src="/Images/Projects/BANK_2/COVER.png" alt="Merchant QC Portal" loading="eager" decoding="async" style={{ willChange: 'transform' }} />
                         <div className='absolute bottom-1.5 left-1.5 right-1.5 bg-white ps-6 py-5.5 rounded-full'>
                             <h2 className='text-lg font-semibold tracking-tighter mb-6 leading-0'>Merchant QC Portal</h2>
                             <p className='text-[#171717]/80 text-sm m-0 leading-0'>Internal Merchant KYC QC</p>
