@@ -1,44 +1,70 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import SmoothScroll from "./components/SmoothScroll";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 const bricolageGrotesque = localFont({
   src: "../public/fonts/BricolageGrotesque.ttf",
-  variable: "--font-bricolage",
+  variable: "--font-bricolage-grotesque",
   display: "swap",
 });
 
-const siteUrl = 'https://gunalm.design';
-
 export const metadata: Metadata = {
-  title: {
-    default: 'gunal.design — Product Designer',
-    template: '%s | gunal.design',
+  title: "Gunal M | UI/UX | Product Designer & Freelance Web Developer in Chennai",
+  description: "Gunal M is a senior product designer and freelance web developer based in Chennai, India. Specializing in UI/UX design, web development, app design, and creating stunning digital experiences. Available for freelance projects worldwide.",
+  keywords: [
+    "freelance web developer",
+    "freelance web designer",
+    "product designer",
+    "UI UX designer",
+    "app designer",
+    "web developer Chennai",
+    "web designer Chennai",
+    "UI designer India",
+    "freelance designer India",
+    "senior product designer",
+    "Gunal M",
+    "gunalm.design"
+  ],
+  authors: [{ name: "Gunal M" }],
+  creator: "Gunal M",
+  publisher: "Gunal M",
+  metadataBase: new URL('https://gunalm.design'),
+  alternates: {
+    canonical: '/',
   },
-  description: 'Product Designer crafting simple solutions for complex financial and merchant products. Available for hire — UI/UX, Product Design, Prototyping.',
-  metadataBase: new URL(siteUrl),
   openGraph: {
-    title: 'gunal.design — Product Designer',
-    description: 'Product Designer crafting simple solutions for complex financial and merchant products. Available for hire.',
-    url: siteUrl,
-    siteName: 'gunal.design',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://gunalm.design',
+    title: 'Gunal M | Freelance Web Developer & UI/UX Designer in Chennai',
+    description: 'Senior product designer and freelance web developer specializing in UI/UX design, web development, and app design. Based in Chennai, India, available worldwide.',
+    siteName: 'Gunal M Portfolio',
     images: [
       {
-        url: `${siteUrl}/Images/OG-Preview.png`,
+        url: '/Images/DP.png',
         width: 1200,
         height: 630,
-        alt: 'gunal.design portfolio preview',
+        alt: 'Gunal M - Freelance Web Developer & UI/UX Designer',
       },
     ],
-    locale: 'en_US',
-    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'gunal.design — Product Designer',
-    description: 'Product Designer crafting simple solutions for complex financial and merchant products.',
-    site: '@GunalDesigns',
+    title: 'Gunal M | Freelance Web Developer & UI/UX Designer',
+    description: 'Senior product designer and freelance web developer specializing in UI/UX design, web development, and app design.',
+    images: ['/Images/DP.png'],
+    creator: '@gunalm',
   },
   robots: {
     index: true,
@@ -46,17 +72,14 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+  verification: {
+    google: 'your-google-verification-code', // Replace with actual code from Google Search Console
   },
-  authors: [{ name: 'Gunal', url: siteUrl }],
 };
 
 export default function RootLayout({
@@ -64,44 +87,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "name": "Gunal",
-        "url": siteUrl,
-        "sameAs": [
-          "https://www.youtube.com/@GunalDesigns"
-        ],
-        "jobTitle": "Product Designer",
-        "email": "mailto:gunalm4624@gmail.com"
-      },
-      {
-        "@type": "WebSite",
-        "name": "gunal.design",
-        "url": siteUrl,
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": `${siteUrl}/?s={search_term_string}`,
-          "query-input": "required name=search_term_string"
-        }
-      }
-    ]
-  };
-
   return (
     <html lang="en">
       <body
-        className={`${bricolageGrotesque.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bricolageGrotesque.variable} antialiased`}
       >
-        <SmoothScroll />
-        {/* JSON-LD for SEO / AEO */}
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         {children}
       </body>
     </html>
