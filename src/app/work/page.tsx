@@ -48,7 +48,7 @@ const projects: Project[] = [
             { label: "Project Type", value: "Personal Project" }
         ],
         bgImage: "/assets/images/BG-3.jpg",
-        projectImage: "/assets/images/Project-3/Cover.png",
+        projectImage: "/assets/images/project-3/Cover.png",
         slug: "tnsetc-bus-booking"
     }
 ];
