@@ -151,7 +151,7 @@ export default function PublicFeedbackForm({ formId, formName, userName, userSlu
     };
 
     return (
-        <div className="min-h-screen bg-[#f5f5f7] flex items-center justify-center p-6 sm:p-12">
+        <div className="h-[100dvh] overflow-y-auto flex items-center justify-center p-6 sm:p-12">
             <AnimatePresence mode="wait">
                 {step === "form" ? (
                     <motion.div
