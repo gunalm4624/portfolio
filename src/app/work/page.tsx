@@ -3,7 +3,7 @@
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 interface Project {
     id: number;
@@ -54,106 +54,55 @@ const projects: Project[] = [
 ];
 
 export default function WorkPage() {
-    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-    useEffect(() => {
-        let animationFrameId: number;
-
-        const updateScales = () => {
-            projects.forEach((_, index) => {
-                const card = cardRefs.current[index];
-                if (!card) return;
-
-                const cardRect = card.getBoundingClientRect();
-                const cardStickyTop = 80 + index * 20;
-
-                // Default scale
-                let scale = 1;
-
-                // If card has reached its sticky position, apply static scale
-                if (cardRect.top <= cardStickyTop + 1) { // Threshold adjustment
-                    // Static scale: first card = 0.90, second = 0.95, third = 1.0
-                    scale = 0.90 + (index * 0.05);
-                }
-
-                // Apply directly to DOM to avoid re-renders
-                card.style.transform = `scale(${scale})`;
-                card.style.transformOrigin = 'top center';
-            });
-
-            animationFrameId = requestAnimationFrame(updateScales);
-        };
-
-        updateScales();
-
-        return () => {
-            if (animationFrameId) cancelAnimationFrame(animationFrameId);
-        };
-    }, []);
-
     return (
-        <main className="min-h-screen p-8 pt-24">
-            <div className="max-w-7xl mx-auto">
+        <div className="pt-24">
+            <div className="max-w-7xl mx-auto space-y-8 md:space-y-12">
                 {projects.map((project, index) => (
-                    <div
+                    <motion.div
                         key={project.id}
-                        ref={(el) => { cardRefs.current[index] = el; }}
-                        className="sticky mb-8 transition-transform duration-150 ease-out"
-                        style={{
-                            top: `${80 + index * 20}px`,
-                        }}
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
+                        className="transition-transform duration-150 ease-out"
                     >
-                        <div
-                            className="flex-col md:flex-row h-auto md:h-[600px] rounded-3xl overflow-hidden relative flex"
-                            style={{
-                                backgroundImage: `url(${project.bgImage})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                            }}
-                        >
-                            <div className="w-full md:w-1/2 flex flex-col z-10 p-8 md:p-12">
-                                <h1 className="text-left text-4xl md:text-5xl primary-font text-white">
-                                    {project.title}
-                                </h1>
-                                <p className="text-left text-base md:text-lg text-white mt-4 leading-relaxed md:leading-loose">
-                                    {project.description}
-                                </p>
-                                <div className="mt-8 md:mt-10 flex gap-8 md:gap-12">
-                                    {project.metrics.map((metric, idx) => (
-                                        <div key={idx}>
-                                            <p className="text-left text-base md:text-lg text-white mt-4">
-                                                {metric.label}
-                                            </p>
-                                            <h1 className="text-left text-2xl md:text-3xl text-white font-semibold mt-2">
-                                                {metric.value}
-                                            </h1>
-                                        </div>
-                                    ))}
-                                </div>
-                                <Link
-                                    href={`/work/${project.slug}`}
-                                    className="mt-8 md:mt-auto px-6 py-3 rounded-full bg-white text-black font-medium w-fit flex items-center gap-2 hover:bg-gray-100 transition-colors"
-                                >
-                                    View Case Study <MoveRight />
-                                </Link>
-
-                            </div>
-                            <div className="w-full md:w-1/2 relative z-0 h-64 md:h-auto">
-                                {project.projectImage && (
-                                    <div className="absolute top-0 bottom-0 right-0 left-0 md:top-12 md:left-12">
-                                        <Image
-                                            src={project.projectImage}
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover object-top md:object-left-top md:rounded-tl-xl"
-                                        />
+                        <Link href={`/work/${project.slug}`} className="group block">
+                            <div className="bg-white rounded-2xl md:rounded-[2.5rem] pt-6 pb-4 px-4 md:pt-6 md:pb-6 md:px-6 shadow-sm border border-gray-100 flex flex-col gap-6 transition-all duration-300 hover:shadow-md hover:border-gray-200">
+                                {/* Card Header */}
+                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center px-2 md:px-4 gap-4">
+                                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                                        <h1 className="text-lg md:text-2xl font-semibold primary-font tracking-tight text-zinc-900">
+                                            {project.title}
+                                        </h1>
+                                        <span className="text-sm text-zinc-400 font-medium whitespace-nowrap hidden md:inline">
+                                            {project.metrics.map(m => `${m.value} ${m.label.toLowerCase()}`).join(", ")}
+                                        </span>
                                     </div>
-                                )}
+                                    <div
+                                        className="px-6 py-2.5 rounded-full bg-zinc-50 text-zinc-900 font-medium text-sm hidden md:flex items-center gap-2 group-hover:bg-zinc-100 transition-colors border border-zinc-200/50"
+                                    >
+                                        View Project <MoveRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                    </div>
+                                </div>
+
+                                {/* Main Image Area */}
+                                <div className="relative w-full aspect-[16/10] bg-[#F7F7F7] rounded-xl md:rounded-[2rem] overflow-hidden flex items-center justify-center p-2 md:p-12">
+                                    {project.projectImage && (
+                                        <div className="relative w-full h-full">
+                                            <Image
+                                                src={project.projectImage}
+                                                alt={project.title}
+                                                fill
+                                                className="object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                                            />
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </Link>
+                    </motion.div>
                 ))}
             </div>
-        </main>
+        </div>
     );
 }

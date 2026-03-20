@@ -77,7 +77,7 @@ export default function UPIPaymentAppCaseStudy() {
                     </div>
 
                     <div className="space-y-4 mb-12">
-                        <h1 className="text-5xl tracking-tight text-zinc-900 primary-font">
+                        <h1 className="text-5xl tracking-tight text-zinc-900 primary-font font-semibold">
                             White-Label UPI Payment App
                         </h1>
                         <p className="text-lg text-pink-600 font-medium tracking-wide uppercase">
@@ -110,7 +110,7 @@ export default function UPIPaymentAppCaseStudy() {
 
                 {/* The Context */}
                 <section id="the-context" className="scroll-mt-24 space-y-12">
-                    <h2 className="text-4xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-4xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         The Context
                     </h2>
                     <div className="prose prose-lg text-zinc-600">
@@ -128,7 +128,7 @@ export default function UPIPaymentAppCaseStudy() {
 
                 {/* Problem Statement */}
                 <section id="problem-statement" className="scroll-mt-24 space-y-12">
-                    <h2 className="text-4xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-4xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Problem Statement
                     </h2>
                     <div className="bg-zinc-50 p-10 rounded-3xl border border-zinc-100 text-lg leading-relaxed text-zinc-700">
@@ -168,7 +168,7 @@ export default function UPIPaymentAppCaseStudy() {
 
                 {/* Part 1: Onboarding UX */}
                 <section id="onboarding-ux" className="scroll-mt-24 space-y-24">
-                    <h2 className="text-4xl tracking-tight text-zinc-900 primary-font leading-tight mb-8">
+                    <h2 className="text-4xl tracking-tight text-zinc-900 primary-font leading-tight mb-8 font-semibold">
                         Part 1: Onboarding Experience
                     </h2>
 
@@ -295,7 +295,7 @@ export default function UPIPaymentAppCaseStudy() {
 
                 {/* Part 2: Transaction UX */}
                 <section id="transaction-ux" className="scroll-mt-24 space-y-24">
-                    <h2 className="text-4xl tracking-tight text-zinc-900 primary-font leading-tight mb-8">
+                    <h2 className="text-4xl tracking-tight text-zinc-900 primary-font leading-tight mb-8 font-semibold">
                         Part 2: Send Money Flow
                     </h2>
 
@@ -408,7 +408,7 @@ export default function UPIPaymentAppCaseStudy() {
 
                 {/* Impact & Results */}
                 <section id="impact-results" className="scroll-mt-24 space-y-12">
-                    <h2 className="text-4xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-4xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Impact & Results
                     </h2>
                     <div className="space-y-10 text-lg text-zinc-600 leading-relaxed">

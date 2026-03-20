@@ -65,7 +65,7 @@ export default function DesignExplorationsClient({ works }: Props) {
                 {filteredWorks.length === 0 ? (
                     <Reveal width="100%">
                         <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
-                            <h3 className="text-7xl primary-font mb-2">Empty Canvas</h3>
+                            <h3 className="text-7xl primary-font mb-2 font-semibold">Empty Canvas</h3>
                             <p className="text-gray-500 text-lg mt-4">Try adjusting your filters to discover more designs.</p>
                         </div>
                     </Reveal>
@@ -87,7 +87,7 @@ export default function DesignExplorationsClient({ works }: Props) {
 
                                         {/* Hover Overlay with Content */}
                                         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-6 text-center">
-                                            <h3 className="text-2xl font-medium text-white mb-2 primary-font translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{work.title}</h3>
+                                            <h3 className="text-2xl font-semibold text-white mb-2 primary-font translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{work.title}</h3>
                                             <p className="text-sm text-gray-200 mb-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">{work.date}</p>
 
                                             {work.link && (

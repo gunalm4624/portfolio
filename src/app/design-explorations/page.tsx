@@ -14,11 +14,14 @@ export default async function DesignExplorationsPage() {
     if (error) {
         console.error("Error fetching explorations:", error);
         return (
-            <div className="min-h-screen flex items-center justify-center p-8 text-center text-red-500">
+            <main className="min-h-screen flex items-center justify-center p-8 text-center text-red-500">
                 Failed to load content. Please try again later.
-            </div>
+            </main>
         );
     }
-
-    return <DesignExplorationsClient works={works || []} />;
+    return (
+        <main className="px-3 md:px-8 pt-32 min-h-screen">
+            <DesignExplorationsClient works={works || []} />
+        </main>
+    );
 }

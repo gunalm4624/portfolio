@@ -90,7 +90,7 @@ export default function BankBackOfficeDashboard() {
                     </div>
 
                     <div className="space-y-2 mb-12">
-                        <h1 className="text-5xl tracking-tight text-zinc-900 primary-font">
+                        <h1 className="text-5xl tracking-tight text-zinc-900 primary-font font-semibold">
                             Bank of Baroda
                         </h1>
                         <p className="text-lg text-zinc-500 font-medium tracking-wide">
@@ -139,7 +139,7 @@ export default function BankBackOfficeDashboard() {
 
                 {/* Understanding the Problem */}
                 <section id="understanding-the-problem" className="scroll-mt-24 space-y-16">
-                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Understanding the Problem
                     </h2>
 
@@ -206,7 +206,7 @@ export default function BankBackOfficeDashboard() {
 
                 {/* Design Strategy */}
                 <section id="design-strategy" className="scroll-mt-24 space-y-12">
-                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Design Strategy
                     </h2>
 
@@ -265,7 +265,7 @@ export default function BankBackOfficeDashboard() {
 
                 {/* Design Process */}
                 <section id="design-process" className="scroll-mt-24 space-y-12">
-                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Design Process
                     </h2>
 
@@ -320,7 +320,7 @@ export default function BankBackOfficeDashboard() {
 
                 {/* Visual Design */}
                 <section id="visual-design" className="scroll-mt-24 space-y-12">
-                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Visual Design
                     </h2>
 
@@ -365,7 +365,7 @@ export default function BankBackOfficeDashboard() {
 
                 {/* Key Features */}
                 <section id="key-features" className="scroll-mt-24 space-y-12">
-                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Key Features Delivered
                     </h2>
 
@@ -426,7 +426,7 @@ export default function BankBackOfficeDashboard() {
 
                 {/* Design Validation */}
                 <section id="design-validation" className="scroll-mt-24 space-y-12">
-                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Design Validation
                     </h2>
                     <div className="bg-zinc-50 p-10 rounded-3xl border border-zinc-100 max-w-4xl">
@@ -466,7 +466,7 @@ export default function BankBackOfficeDashboard() {
 
                 {/* Final Solution */}
                 <section id="final-solution" className="scroll-mt-24 space-y-12">
-                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Final Solution
                     </h2>
 
@@ -507,7 +507,7 @@ export default function BankBackOfficeDashboard() {
 
                 {/* Impact & Outcomes */}
                 <section id="impact-outcomes" className="scroll-mt-24 space-y-12">
-                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Impact & Outcomes
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl">
@@ -553,7 +553,7 @@ export default function BankBackOfficeDashboard() {
 
                 {/* Reflection */}
                 <section id="reflection-learnings" className="scroll-mt-24 space-y-12 mb-32">
-                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight">
+                    <h2 className="text-5xl tracking-tight text-zinc-900 primary-font leading-tight font-semibold">
                         Reflection & Learnings
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl text-lg leading-relaxed text-zinc-600">

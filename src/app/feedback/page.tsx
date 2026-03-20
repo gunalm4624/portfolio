@@ -82,16 +82,16 @@ const FeedbackCard = ({ feedback }: { feedback: typeof feedbacks[0] }) => (
 
 const Feedback = () => {
     return (
-        <main className="p-8 pb-32 pt-32">
+        <main className="px-3 md:px-8 pb-32 pt-32">
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-5xl mb-16 primary-font text-center">Feedback from teammates & collaborators</h1>
 
                 <div className="relative overflow-hidden">
                     {/* Left Fade Gradient */}
-                    <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent" />
+                    <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-background to-transparent" />
 
                     {/* Right Fade Gradient */}
-                    <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent" />
+                    <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-background to-transparent" />
 
                     <div className="flex animate-marquee gap-8">
                         {/* First set */}
@@ -124,6 +124,12 @@ const Feedback = () => {
                 
                 .animate-marquee {
                     animation: marquee 20s linear infinite;
+                }
+                
+                @media (max-width: 768px) {
+                    .animate-marquee {
+                        animation-duration: 12s;
+                    }
                 }
                 
                 .animate-marquee:hover {

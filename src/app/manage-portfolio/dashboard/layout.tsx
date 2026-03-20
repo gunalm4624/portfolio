@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase/client";
 import { toast } from "sonner";
-import { LayoutDashboard, Palette, LogOut } from "lucide-react";
+import { LayoutDashboard, Palette, LogOut, MessageSquare } from "lucide-react";
 
 export default function DashboardLayout({
     children,
@@ -35,6 +35,13 @@ export default function DashboardLayout({
             href: "/manage-portfolio/dashboard/explorations",
             icon: (
                 <Palette className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+            ),
+        },
+        {
+            label: "Feedback",
+            href: "/manage-portfolio/dashboard/feedback",
+            icon: (
+                <MessageSquare className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
             ),
         },
         {

@@ -17,17 +17,17 @@ const tools = [
 
 const Tools = () => {
     return (
-        <main className="p-8 pt-24">
+        <div className="pt-24">
             <div className="max-w-7xl mx-auto">
-                <p className="text-2xl mb-8 primary-font text-center">Tools which I use on a daily basis.</p>
+                <p className="text-2xl mb-8 primary-font text-center font-semibold">Tools which I use on a daily basis.</p>
 
                 {/* Auto-sliding Marquee */}
                 <div className="relative overflow-hidden mt-16">
                     {/* Left Fade Gradient */}
-                    <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent" />
+                    <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-background to-transparent" />
 
                     {/* Right Fade Gradient */}
-                    <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent" />
+                    <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-background to-transparent" />
 
                     <div className="flex animate-marquee gap-32">
                         {/* First set of logos */}
@@ -96,11 +96,17 @@ const Tools = () => {
                     animation: marquee 20s linear infinite;
                 }
                 
+                @media (max-width: 768px) {
+                    .animate-marquee {
+                        animation-duration: 12s;
+                    }
+                }
+                
                 .animate-marquee:hover {
                     animation-play-state: paused;
                 }
             `}</style>
-        </main>
+        </div>
     );
 };
 

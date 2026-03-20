@@ -4,11 +4,10 @@ import { Mail, FileText } from "lucide-react";
 
 const Footer = () => {
     return (
-        <main className="p-8 pt-24 relative overflow-hidden">
+        <footer className="mt-32 pb-12">
 
 
             {/* Bottom Purple Gradient Blur */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-purple-500/20 blur-[80px] rounded-t-full pointer-events-none" />
 
             <div className="max-w-7xl mx-auto relative z-10 flex flex-col gap-8">
                 {/* Get in touch Card */}
@@ -17,7 +16,7 @@ const Footer = () => {
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-purple-500/20 blur-[60px] rounded-t-full pointer-events-none" />
 
                     <div className="relative z-10">
-                        <h2 className="text-4xl mb-4 primary-font">Get in touch</h2>
+                        <h2 className="text-3xl mb-4 primary-font font-semibold">Get in touch</h2>
                         <p className="text-gray-600 dark:text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed">
                             I&apos;m always interested in exploring new opportunities, collaborating, or exchanging ideas with like-minded individuals. Feel free to email me if you&apos;d like to see my portfolio deck.
                         </p>
@@ -76,7 +75,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </main>
+        </footer>
     );
 };
 

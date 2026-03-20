@@ -57,11 +57,11 @@ const appDesignProjects: Project[] = [
     }
 ];
 
-const MoreWorks = () => {
+export default function MoreWorksPage() {
     return (
-        <main className="p-8 pt-24">
+        <div className="pt-24">
             <div className="max-w-7xl mx-auto w-full">
-                <h1 className="text-5xl mb-12 primary-font text-center md:text-left">More Works</h1>
+                <h1 className="text-4xl mb-12 primary-font text-center md:text-left font-semibold tracking-tight">More Works</h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-32">
                     <AnimatedFolder
@@ -84,8 +84,6 @@ const MoreWorks = () => {
                     />
                 </div>
             </div>
-        </main>
+        </div>
     );
-};
-
-export default MoreWorks;
+}
