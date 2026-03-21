@@ -37,30 +37,50 @@ export default function HomePage() {
                 </p>
             </Reveal>
 
-            <Reveal width="100%" className="flex justify-center mt-10" delay={0.4}>
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                    <motion.a
-                        href="/assets/Gunal Product Designer.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="h-12 px-6 flex items-center gap-2 bg-zinc-900 text-white rounded-full text-sm font-medium hover:bg-zinc-800 transition-colors group"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                    >
-                        <span>Download Resume</span>
-                        <div className="bg-white/10 p-1 rounded-md group-hover:bg-white/20 transition-colors">
-                            <ArrowRight className="w-3.5 h-3.5 invisible group-hover:visible group-hover:translate-x-0.5 transition-all" />
-                        </div>
-                    </motion.a>
-
-                    <Link href="/contact" className="contents">
-                        <motion.button
-                            className="h-12 px-8 flex items-center justify-center bg-white text-zinc-900 rounded-full text-sm font-medium border border-zinc-200 shadow-sm hover:bg-zinc-50 transition-colors"
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
+            <Reveal width="100%" className="flex justify-center mt-10 w-full" delay={0.4}>
+                <div className="flex flex-col sm:flex-row items-center gap-4 w-100 justify-center px-4 sm:px-0">
+                    {/* Download CV — Ping Me style */}
+                    <a href="/assets/Gunal Product Designer.pdf" target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto">
+                        <motion.div
+                            className="flex items-center justify-between gap-3 bg-black pl-5 pr-3 py-3 rounded-full border border-white/10 hover:bg-zinc-900 transition-colors w-full sm:w-auto"
+                            whileHover="hover"
+                            initial="initial"
                         >
-                            Hire Me
-                        </motion.button>
+                            <div className="w-12 sm:hidden" />
+                            <span className="flex-1 sm:flex-none text-center sm:text-left text-xs font-bold text-white tracking-wide uppercase">Download CV</span>
+                            <div className="bg-zinc-800/80 px-3 py-2 rounded-full relative overflow-hidden h-8 w-12 flex items-center justify-center">
+                                <motion.div className="relative flex items-center justify-center w-full h-full" transition={{ duration: 0.8, ease: "easeInOut" }}>
+                                    <motion.div variants={{ hover: { x: 30, opacity: 0 }, initial: { x: 0, opacity: 1 } }} className="absolute">
+                                        <ArrowRight className="w-3.5 h-3.5 text-white" />
+                                    </motion.div>
+                                    <motion.div variants={{ hover: { x: 0, opacity: 1 }, initial: { x: -30, opacity: 0 } }} className="absolute">
+                                        <ArrowRight className="w-3.5 h-3.5 text-white" />
+                                    </motion.div>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    </a>
+
+                    {/* Hire Me — white pill */}
+                    <Link href="/contact" className="group w-full sm:w-auto">
+                        <motion.div
+                            className="flex items-center justify-between gap-3 bg-white pl-5 pr-3 py-3 rounded-full border border-zinc-200 shadow-sm hover:bg-zinc-50 transition-colors w-full sm:w-auto"
+                            whileHover="hover"
+                            initial="initial"
+                        >
+                            <div className="w-12 sm:hidden" />
+                            <span className="flex-1 sm:flex-none text-center sm:text-left text-xs font-bold text-zinc-900 tracking-wide uppercase">Hire Me</span>
+                            <div className="bg-zinc-100 px-3 py-2 rounded-full relative overflow-hidden h-8 w-12 flex items-center justify-center">
+                                <motion.div className="relative flex items-center justify-center w-full h-full" transition={{ duration: 0.8, ease: "easeInOut" }}>
+                                    <motion.div variants={{ hover: { x: 30, opacity: 0 }, initial: { x: 0, opacity: 1 } }} className="absolute">
+                                        <ArrowRight className="w-3.5 h-3.5 text-zinc-900" />
+                                    </motion.div>
+                                    <motion.div variants={{ hover: { x: 0, opacity: 1 }, initial: { x: -30, opacity: 0 } }} className="absolute">
+                                        <ArrowRight className="w-3.5 h-3.5 text-zinc-900" />
+                                    </motion.div>
+                                </motion.div>
+                            </div>
+                        </motion.div>
                     </Link>
                 </div>
             </Reveal>

@@ -55,7 +55,7 @@ const projects: Project[] = [
 
 export default function WorkPage() {
     return (
-        <div className="pt-24">
+        <div className="pt-16">
             <div className="max-w-7xl mx-auto space-y-8 md:space-y-12">
                 {projects.map((project, index) => (
                     <motion.div
