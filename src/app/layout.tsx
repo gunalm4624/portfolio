@@ -43,7 +43,6 @@ export default function RootLayout({
         <html lang="en">
             <body className={`antialiased ${dmSans.variable} ${satoshi.variable}`}>
                 <SmoothScroll>
-                    <Navigation />
                     {children}
                 </SmoothScroll>
                 <Toaster />
