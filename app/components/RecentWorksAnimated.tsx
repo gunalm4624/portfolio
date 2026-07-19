@@ -41,6 +41,7 @@ function MetaRow({
     return (
       <a
         href={href}
+        title={label}
         target="_blank"
         rel="noopener noreferrer"
         className="block border-b border-zinc-300 transition-colors hover:text-zinc-950 dark:border-zinc-600"

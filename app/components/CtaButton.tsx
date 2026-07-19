@@ -31,6 +31,7 @@ export default function CtaButton({
     return (
       <button
         type="button"
+        title={label}
         data-cal-namespace={CAL_NAMESPACE}
         data-cal-link={calLink}
         data-cal-config='{"layout":"month_view"}'
@@ -42,7 +43,7 @@ export default function CtaButton({
   }
 
   return (
-    <a href={href} className={sharedClassName}>
+    <a href={href} title={label} className={sharedClassName}>
       {content}
     </a>
   );

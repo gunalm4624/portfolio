@@ -18,7 +18,7 @@ export default async function Services() {
           </h2>
           <p className="mt-6 max-w-md text-lg text-zinc-400">
             {section.subheadingPrefix}{" "}
-            <a href={`mailto:${section.email}`} className="text-white hover:underline">
+            <a href={`mailto:${section.email}`} title={section.email} className="text-white hover:underline">
               {section.email}
             </a>
           </p>

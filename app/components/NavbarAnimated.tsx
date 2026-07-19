@@ -63,6 +63,7 @@ export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
         <div className="flex items-center gap-4">
           <a
             href="/"
+            title="Home"
             onClick={(e) => handleScroll(e, "/#top")}
             className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full"
             aria-label="Home"
@@ -89,6 +90,7 @@ export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
               <li key={link.label}>
                 <a
                   href={link.href}
+                  title={link.label}
                   onClick={(e) => handleScroll(e, link.href)}
                   className="transition-colors hover:text-zinc-950 dark:hover:text-white"
                 >
@@ -127,6 +129,7 @@ export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
               <a
                 key={link.label}
                 href={link.href}
+                title={link.label}
                 onClick={(e) => handleScroll(e, link.href)}
                 className="rounded-xl px-4 py-3 text-base text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-white"
               >

@@ -57,6 +57,7 @@ function HoverButton({ label, href }: { label: string; href: string }) {
 
   const button = (
     <motion.button
+      title={label}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       className={`relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full border py-6 text-3xl font-medium tracking-tight transition-colors duration-300 sm:py-8 sm:text-4xl ${isHovered
@@ -100,7 +101,7 @@ function HoverButton({ label, href }: { label: string; href: string }) {
   }
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="w-full max-w-xl lg:max-w-none lg:flex-1">
+    <a href={href} title={label} target="_blank" rel="noopener noreferrer" className="w-full max-w-xl lg:max-w-none lg:flex-1">
       {button}
     </a>
   );

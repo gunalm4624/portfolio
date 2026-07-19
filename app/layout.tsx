@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://gunalm.design"),
   title: "gunalm.design — Websites that impress, attract and convert",
   description:
-    "UI/UX and web design for pre-seed and seed companies — designed to scale with you as you grow.",
+    "Premium UI/UX and web design for pre-seed and seed companies. We build stunning, high-converting websites designed to scale with your growing startup.",
   keywords: ["UI/UX design", "web design", "startup design", "Framer", "React", "Next.js", "Gunal"],
   authors: [{ name: "Gunal", url: "https://gunalm.design" }],
   creator: "Gunal",
   openGraph: {
     title: "gunalm.design — Websites that impress, attract and convert",
-    description: "UI/UX and web design for pre-seed and seed companies — designed to scale with you as you grow.",
+    description: "Premium UI/UX and web design for pre-seed and seed companies. We build stunning, high-converting websites designed to scale with your growing startup.",
     url: "https://gunalm.design",
     siteName: "Gunal Design",
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "gunalm.design",
-    description: "UI/UX and web design for pre-seed and seed companies.",
+    description: "Premium UI/UX and web design for pre-seed and seed companies. We build stunning, high-converting websites designed to scale with your growing startup.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -77,7 +77,7 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             name: "Gunal Design",
-            description: "UI/UX and web design for pre-seed and seed companies — designed to scale with you as you grow.",
+            description: "Premium UI/UX and web design for pre-seed and seed companies. We build stunning, high-converting websites designed to scale with your growing startup.",
             url: "https://gunalm.design",
             email: "hey@gunalm.design",
             sameAs: [
