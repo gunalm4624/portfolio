@@ -19,7 +19,7 @@ export default function ContactPage() {
         <main className="flex-1 px-6 pb-24 pt-40 sm:px-8">
           <FadeIn className="mx-auto max-w-3xl">
             <div className="mb-12 text-center">
-              <h1 className="text-4xl font-normal leading-snug tracking-tighter text-zinc-950 sm:text-5xl dark:text-white">
+              <h1 className="text-4xl font-medium leading-snug tracking-tighter text-zinc-950 sm:text-5xl dark:text-white">
                 Let's build something <span className="text-[#ed254e]">great</span> together.
               </h1>
               <p className="mt-6 text-lg text-zinc-500 dark:text-zinc-400">
