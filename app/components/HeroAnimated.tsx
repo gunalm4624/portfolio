@@ -10,7 +10,7 @@ import CtaButton from "./CtaButton";
 export default function HeroAnimated({ hero }: { hero: HeroContent }) {
   return (
     <section className="flex w-full flex-col items-center px-6 pt-32 pb-16 sm:pt-48 sm:pb-24 text-center sm:px-8">
-      <h1 className="max-w-3xl text-[32px] sm:text-[52px] font-normal leading-snug sm:leading-[1.08] tracking-tighter text-zinc-950 dark:text-white">
+      <h1 className="max-w-3xl text-[32px] sm:text-[52px] font-medium leading-snug sm:leading-[1.08] tracking-tighter text-zinc-950 dark:text-white">
         <TextAnimate
           as="span"
           by="word"

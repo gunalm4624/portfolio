@@ -13,7 +13,7 @@ export default async function Services() {
           <span className={`${penScript.className} text-xl text-yellow-400`}>
             {section.sectionLabel}
           </span>
-          <h2 className="mt-6 text-4xl font-normal leading-[1.08] tracking-tighter text-white">
+          <h2 className="mt-6 text-4xl font-medium leading-[1.08] tracking-tighter text-white">
             {section.heading}
           </h2>
           <p className="mt-6 max-w-md text-lg text-zinc-400">

@@ -66,7 +66,7 @@ export default function FaqAnimated({
         <span className={`${penScript.className} text-xl text-[#ed254e]`}>
           {section.sectionLabel}
         </span>
-        <h2 className="mt-6 text-4xl font-normal leading-snug tracking-tighter text-zinc-950 sm:text-5xl dark:text-white">
+        <h2 className="mt-6 text-4xl font-medium leading-snug tracking-tighter text-zinc-950 sm:text-5xl dark:text-white">
           {section.heading}
         </h2>
 

@@ -13,7 +13,7 @@ export default async function WhatWeDo() {
           {content.sectionLabel}
         </span>
 
-        <h2 className="mt-6 max-w-3xl text-4xl leading-snug tracking-tight sm:text-5xl">
+        <h2 className="mt-6 max-w-3xl text-4xl font-medium leading-snug tracking-tight sm:text-5xl">
           <TextAnimate animation="blurInUp" as="span" className="text-zinc-500" delay={0}>
             {content.textBefore}
           </TextAnimate>

@@ -13,7 +13,7 @@ export default async function Process() {
           <span className={`${penScript.className} text-xl text-[#ed254e]`}>
             {content.sectionLabel}
           </span>
-          <h2 className="mt-6 text-4xl font-normal leading-snug tracking-tighter text-zinc-950">
+          <h2 className="mt-6 text-4xl font-medium leading-snug tracking-tighter text-zinc-950">
             {content.headingLead} <span className="text-zinc-500">{content.headingRest}</span>
           </h2>
         </div>

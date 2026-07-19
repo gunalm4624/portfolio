@@ -176,7 +176,7 @@ export default function RecentWorksAnimated({ works }: { works: WorkItem[] }) {
           by="word"
           animation="blurIn"
           once
-          className="text-center text-4xl font-normal leading-[1.08] mb-16 mt-24 tracking-tighter text-zinc-950 dark:text-white"
+          className="text-center text-4xl font-medium leading-[1.08] mb-16 mt-24 tracking-tighter text-zinc-950 dark:text-white"
         >
           Recent Works
         </TextAnimate>
