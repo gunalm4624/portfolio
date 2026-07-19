@@ -10,7 +10,7 @@ export default function CalInit() {
     (async function initCal() {
       const cal = await getCalApi({ namespace: CAL_NAMESPACE });
       cal("ui", {
-        theme: "auto",
+        theme: "light",
         styles: { branding: { brandColor: "#ed254e" } },
         hideEventTypeDetails: false,
         layout: "month_view",

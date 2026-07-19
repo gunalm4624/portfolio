@@ -13,6 +13,7 @@ export default function CalBooking() {
     (async function initCal() {
       const cal = await getCalApi({ namespace: CAL_NAMESPACE });
       cal("ui", {
+        theme: "light",
         cssVarsPerTheme: {
           light: { "cal-brand": "#ed254e" },
           dark: { "cal-brand": "#ed254e" },
@@ -44,7 +45,7 @@ export default function CalBooking() {
           opacity: isReady ? 1 : 0,
           transition: "opacity 0.3s ease",
         }}
-        config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
+        config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "light" }}
       />
     </div>
   );
