@@ -63,8 +63,8 @@ export default async function Marquee() {
 
   return (
     <div className="relative w-full overflow-hidden pb-16 pt-8">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent dark:from-black sm:w-40" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent dark:from-black sm:w-40" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-24 bg-gradient-to-r from-white to-transparent dark:from-black sm:block sm:w-40" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-24 bg-gradient-to-l from-white to-transparent dark:from-black sm:block sm:w-40" />
 
       <div className="flex w-max animate-marquee gap-5">
         {items.map((project, i) => (
