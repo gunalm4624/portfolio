@@ -82,7 +82,7 @@ export default function RootLayout({
       lang="en"
       className={`${bricolageGrotesque.variable} ${geistMono.variable} h-full overflow-x-clip antialiased`}
     >
-      <body className="flex min-h-full min-w-0 flex-col overflow-x-clip">
+      <body className="flex min-h-full min-w-0 flex-col overflow-x-clip bg-[#F2EEE3]">
         <Script id="schema-org" type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",

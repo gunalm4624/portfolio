@@ -62,7 +62,7 @@ export default function FaqAnimated({
 
   return (
     <section id="faq" className="w-full bg-zinc-50 px-4 py-16 sm:px-8 sm:py-32 dark:bg-zinc-950">
-      <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
+      <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
         <span className={`${penScript.className} text-xl text-[#ed254e]`}>
           {section.sectionLabel}
         </span>

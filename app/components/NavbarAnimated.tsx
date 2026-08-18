@@ -72,7 +72,8 @@ export default function NavbarAnimated() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed inset-x-0 top-0 z-50 w-full"
     >
-      <nav className="flex w-full items-center justify-between gap-3 border-b border-zinc-200/60 bg-background/70 px-4 py-3 backdrop-blur-xl backdrop-saturate-150 sm:gap-6 md:px-20 dark:border-zinc-800/60">
+      <nav className="w-full border-b border-zinc-200/60 bg-background/70 backdrop-blur-xl backdrop-saturate-150 dark:border-zinc-800/60">
+        <div className="page-shell flex w-full items-center justify-between gap-3 px-4 py-3 sm:gap-6 md:px-20">
         <div className="flex items-center gap-4">
           <a
             href="/"
@@ -124,6 +125,7 @@ export default function NavbarAnimated() {
           >
             {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
+        </div>
         </div>
       </nav>
 

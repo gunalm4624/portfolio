@@ -170,7 +170,7 @@ function ProjectContent({ project, className = "" }: { project: Project; classNa
 
 export default function Works() {
   return (
-    <section id="works" className="w-full bg-[#F2EEE3] px-4 py-16 text-[#181510] sm:px-6 sm:py-24 md:px-20">
+    <section id="works" className="page-shell w-full bg-[#F2EEE3] px-4 py-16 text-[#181510] sm:px-6 sm:py-24 md:px-20">
       <FadeIn>
         <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">Selected work</h2>
       </FadeIn>

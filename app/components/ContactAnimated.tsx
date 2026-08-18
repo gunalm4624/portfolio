@@ -109,8 +109,8 @@ function HoverButton({ label, href }: { label: string; href: string }) {
 
 export default function ContactAnimated({ content }: { content: ContactContent }) {
   return (
-    <section id="contact" className="w-full bg-black px-4 pb-8 pt-16 sm:px-8 sm:pb-10 sm:pt-24">
-      <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
+    <section id="contact" className="w-full bg-black">
+      <div className="page-shell mx-auto flex flex-col items-center px-4 pb-8 pt-16 text-center sm:px-8 sm:pb-10 sm:pt-24">
         <span className={`${penScript.className} text-xl text-[#ed254e]`}>
           {content.sectionLabel}
         </span>

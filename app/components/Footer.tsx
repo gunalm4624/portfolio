@@ -24,7 +24,8 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#181510] px-4 pt-16 pb-10 text-[#F2EEE3] sm:px-6 md:px-20 md:pt-28 md:pb-16">
+    <footer className="w-full bg-[#181510] text-[#F2EEE3]">
+      <div className="page-shell px-4 pt-16 pb-10 sm:px-6 md:px-20 md:pt-28 md:pb-16">
       <FadeIn>
         <p className="font-mono text-sm text-[#F2EEE3]/50">Still tweaking this footer, probably.</p>
       </FadeIn>
@@ -74,6 +75,7 @@ export default function Footer() {
         <span className="font-mono text-xs text-[#F2EEE3]/50">
           © 2026 gunalm.design. All rights reserved.
         </span>
+      </div>
       </div>
     </footer>
   );

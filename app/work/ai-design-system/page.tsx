@@ -82,7 +82,7 @@ export default function AiDesignSystemCaseStudy() {
     <div className="flex min-h-screen flex-col bg-[#F2EEE3] text-[#181510]">
       <Navbar />
 
-      <main className="flex-1 px-4 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-24 md:px-20">
+      <main className="page-shell flex-1 px-4 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-24 md:px-20">
         <FadeIn>
           <Link
             href="/#works"

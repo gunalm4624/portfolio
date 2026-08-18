@@ -70,6 +70,12 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
+.page-shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 90rem;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

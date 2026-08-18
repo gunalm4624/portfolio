@@ -60,7 +60,7 @@ export default function Explorations() {
   return (
     <section
       id="explorations"
-      className="w-full bg-[#F2EEE3] px-4 pt-8 pb-16 text-[#181510] sm:px-6 sm:pb-24 md:px-20"
+      className="page-shell w-full bg-[#F2EEE3] px-4 pt-8 pb-16 text-[#181510] sm:px-6 sm:pb-24 md:px-20"
     >
       <FadeIn>
         <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">Design exploration</h2>

@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-black">
         <Navbar />
-        <main className="flex-1 px-4 pb-16 pt-32 sm:px-8 sm:pb-24 sm:pt-40">
+        <main className="page-shell flex-1 px-4 pb-16 pt-32 sm:px-8 sm:pb-24 sm:pt-40">
           <FadeIn className="mx-auto max-w-3xl">
             <div className="mb-12 text-center">
               <h1 className="text-4xl font-medium leading-snug tracking-tighter text-zinc-950 sm:text-5xl dark:text-white">

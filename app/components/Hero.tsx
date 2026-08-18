@@ -27,7 +27,7 @@ const stats = [
 export default function Hero() {
   return (
     <section className="w-full bg-[#F2EEE3] text-[#181510]">
-      <div className="flex w-full flex-col px-4 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-24 md:px-20">
+      <div className="page-shell flex w-full flex-col px-4 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-24 md:px-20">
         <div className="flex flex-col">
           <FadeIn>
             <h1 className="text-[2.5rem] leading-[1.12] font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
@@ -94,7 +94,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="w-full px-4 py-12 sm:px-6 sm:py-16 md:px-20">
+      <div className="page-shell w-full px-4 py-12 sm:px-6 sm:py-16 md:px-20">
         <div className="grid grid-cols-2 divide-x divide-y divide-[#181510]/30 overflow-hidden rounded-3xl border border-[#181510]/30 sm:grid-cols-4 sm:divide-y-0">
           {stats.map((stat) => (
             <div key={stat.label} className="flex min-w-0 flex-col gap-2 px-4 py-5 sm:px-8 sm:py-6">
