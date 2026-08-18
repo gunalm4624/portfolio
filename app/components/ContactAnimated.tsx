@@ -60,7 +60,7 @@ function HoverButton({ label, href }: { label: string; href: string }) {
       title={label}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className={`relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full border py-6 text-3xl font-medium tracking-tight transition-colors duration-300 sm:py-8 sm:text-4xl ${isHovered
+      className={`relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full border py-4 text-xl font-medium tracking-tight transition-colors duration-300 sm:py-8 sm:text-4xl ${isHovered
         ? "border-[#ed254e] bg-[#ed254e] text-white"
         : "border-zinc-700 bg-zinc-800 text-white"
         }`}
@@ -77,7 +77,7 @@ function HoverButton({ label, href }: { label: string; href: string }) {
             variants={wavyVariants}
             by="character"
             startOnView={false}
-            className="pointer-events-none text-3xl font-medium tracking-tight sm:text-4xl"
+            className="pointer-events-none text-xl font-medium tracking-tight sm:text-4xl"
           >
             {label}
           </TextAnimate>
@@ -109,7 +109,7 @@ function HoverButton({ label, href }: { label: string; href: string }) {
 
 export default function ContactAnimated({ content }: { content: ContactContent }) {
   return (
-    <section id="contact" className="w-full bg-black px-6 pb-8 pt-16 sm:pb-10 sm:pt-24 sm:px-8">
+    <section id="contact" className="w-full bg-black px-4 pb-8 pt-16 sm:px-8 sm:pb-10 sm:pt-24">
       <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
         <span className={`${penScript.className} text-xl text-[#ed254e]`}>
           {content.sectionLabel}

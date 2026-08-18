@@ -5,20 +5,30 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
-import type { HeroContent } from "../../sanity/lib/queries";
-import CtaButton from "./CtaButton";
-
 const links = [
-  { label: "Works", href: "/#works" },
-  { label: "Process", href: "/#process" },
-  { label: "Services", href: "/#services" },
-  { label: "Contact", href: "/contact" },
+  { label: "work", href: "/#works" },
+  { label: "about", href: "/about" },
+  { label: "play with gunal", href: "/play" },
 ];
 
 import { useLenis } from "lenis/react";
 import { usePathname } from "next/navigation";
 
-export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
+function OpenToWorkBadge({ className }: { className: string }) {
+  return (
+    <div
+      className={`items-center gap-2 rounded-full border border-zinc-200 px-4 py-2.5 font-mono text-xs text-zinc-600 dark:border-zinc-800 dark:text-zinc-400 ${className}`}
+    >
+      <span className="relative flex h-2 w-2">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ed254e] opacity-75" />
+        <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ed254e]" />
+      </span>
+      Open to work
+    </div>
+  );
+}
+
+export default function NavbarAnimated() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -45,7 +55,10 @@ export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
       if (pathname === "/") {
         if (lenis) {
           e.preventDefault();
-          lenis.scrollTo(hash === "#top" ? 0 : hash);
+          lenis.scrollTo(hash === "#top" ? 0 : hash, {
+            offset: hash === "#top" ? 0 : -8,
+            duration: 1.8,
+          });
           window.history.replaceState(null, "", hash === "#top" ? "/" : hash);
         }
       }
@@ -57,15 +70,15 @@ export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
       initial={{ opacity: 0, y: -32 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed inset-x-0 top-3 z-50 flex justify-center px-4"
+      className="fixed inset-x-0 top-0 z-50 w-full"
     >
-      <nav className="flex w-full max-w-5xl items-center justify-between gap-6 rounded-full border border-zinc-200 bg-white p-1.5 dark:border-zinc-800 dark:bg-black">
+      <nav className="flex w-full items-center justify-between gap-3 border-b border-zinc-200/60 bg-background/70 px-4 py-3 backdrop-blur-xl backdrop-saturate-150 sm:gap-6 md:px-20 dark:border-zinc-800/60">
         <div className="flex items-center gap-4">
           <a
             href="/"
             title="Home"
             onClick={(e) => handleScroll(e, "/#top")}
-            className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full"
+            className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-white"
             aria-label="Home"
           >
             <Image
@@ -73,7 +86,7 @@ export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
               alt="gunalm.design"
               fill
               sizes="48px"
-              className="object-cover"
+              className="object-cover grayscale"
             />
           </a>
           <div className="hidden h-0.5 w-24 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-900 sm:block">
@@ -85,7 +98,7 @@ export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
         </div>
 
         <div className="flex items-center gap-3 sm:gap-6">
-          <ul className="hidden items-center gap-6 text-base text-zinc-600 dark:text-zinc-400 sm:flex">
+          <ul className="hidden items-center gap-6 font-mono text-sm text-zinc-600 dark:text-zinc-400 sm:flex">
             {links.map((link) => (
               <li key={link.label}>
                 <a
@@ -100,9 +113,7 @@ export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
             ))}
           </ul>
 
-          <div className="hidden sm:block">
-            <CtaButton label={hero.ctaLabel} href={hero.ctaHref} shadow={false} />
-          </div>
+          <OpenToWorkBadge className="hidden sm:inline-flex" />
 
           <button
             type="button"
@@ -123,7 +134,7 @@ export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute inset-x-4 top-[calc(100%+8px)] flex max-h-[calc(100vh-88px)] flex-col gap-1 overflow-y-auto rounded-3xl border border-zinc-200 bg-white p-4 shadow-lg sm:hidden dark:border-zinc-800 dark:bg-black"
+            className="absolute inset-x-0 top-full flex max-h-[calc(100vh-64px)] flex-col gap-1 overflow-y-auto border-b border-zinc-200/60 bg-background/90 p-4 shadow-lg backdrop-blur-xl sm:hidden dark:border-zinc-800/60"
           >
             {links.map((link) => (
               <a
@@ -137,7 +148,7 @@ export default function NavbarAnimated({ hero }: { hero: HeroContent }) {
               </a>
             ))}
             <div className="mt-2 px-4">
-              <CtaButton label={hero.ctaLabel} href={hero.ctaHref} shadow={false} className="w-full justify-center" />
+              <OpenToWorkBadge className="flex w-full justify-center" />
             </div>
           </motion.div>
         )}

@@ -10,6 +10,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: "/work/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow, noimageindex, nosnippet",
+          },
+        ],
+      },
+    ];
+  },
+  devIndicators: false,
 };
 
 export default nextConfig;

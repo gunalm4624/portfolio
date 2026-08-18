@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Bricolage_Grotesque, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
 import CalInit from "./components/CalInit";
+import SmoothScroll from "./components/SmoothScroll";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bricolageGrotesque = Bricolage_Grotesque({
+  variable: "--font-bricolage-grotesque",
   subsets: ["latin"],
 });
 
@@ -15,35 +16,45 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://gunalm.design"),
-  title: "gunalm.design — Websites that impress, attract and convert",
+  title: "gunalm.design — Design Engineer who skips the handoff",
   description:
-    "Premium UI/UX and web design for pre-seed and seed companies. We build stunning, high-converting websites designed to scale with your growing startup.",
-  keywords: ["UI/UX design", "web design", "startup design", "Framer", "React", "Next.js", "Gunal"],
+    "Design Engineer for pre-seed and seed startups. I design, build, and ship MVPs solo — no handoffs — so you get from idea to live product faster.",
+  keywords: [
+    "Design Engineer",
+    "Product Design Engineer",
+    "MVP development",
+    "startup MVP",
+    "UI/UX design",
+    "web design",
+    "Next.js",
+    "React",
+    "SwiftUI",
+    "iOS development",
+    "Gunal",
+  ],
   authors: [{ name: "Gunal", url: "https://gunalm.design" }],
   creator: "Gunal",
   openGraph: {
-    title: "gunalm.design — Websites that impress, attract and convert",
-    description: "Premium UI/UX and web design for pre-seed and seed companies. We build stunning, high-converting websites designed to scale with your growing startup.",
+    title: "gunalm.design — Design Engineer who skips the handoff",
+    description:
+      "Design Engineer for pre-seed and seed startups. I design, build, and ship MVPs solo — no handoffs — so you get from idea to live product faster.",
     url: "https://gunalm.design",
     siteName: "Gunal Design",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Gunal Design",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "gunalm.design",
-    description: "Premium UI/UX and web design for pre-seed and seed companies. We build stunning, high-converting websites designed to scale with your growing startup.",
-    images: ["/og-image.png"],
+    title: "gunalm.design — Design Engineer who skips the handoff",
+    description:
+      "Design Engineer for pre-seed and seed startups. I design, build, and ship MVPs solo — no handoffs — so you get from idea to live product faster.",
   },
   alternates: {
     canonical: "https://gunalm.design",
@@ -69,18 +80,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${bricolageGrotesque.variable} ${geistMono.variable} h-full overflow-x-clip antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full min-w-0 flex-col overflow-x-clip">
         <Script id="schema-org" type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             name: "Gunal Design",
-            description: "Premium UI/UX and web design for pre-seed and seed companies. We build stunning, high-converting websites designed to scale with your growing startup.",
+            description:
+              "Design Engineer for pre-seed and seed startups. I design, build, and ship MVPs solo — no handoffs — so you get from idea to live product faster.",
             url: "https://gunalm.design",
             email: "hey@gunalm.design",
             sameAs: [
+              "https://www.linkedin.com/in/gunalm-design/",
+              "https://www.behance.net/gunaldesigns",
               "https://www.youtube.com/@GunalDesigns"
             ]
           })
@@ -93,7 +107,7 @@ export default function RootLayout({
           })(window, document, "clarity", "script", "xostxzte0q");`}
         </Script>
         <CalInit />
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

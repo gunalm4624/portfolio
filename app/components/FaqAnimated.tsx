@@ -21,7 +21,7 @@ function FaqItemCard({
         className="flex w-full cursor-pointer items-center justify-between py-6 text-left focus:outline-none"
         onClick={onClick}
       >
-        <span className="text-xl font-medium tracking-tight text-zinc-950 dark:text-white">
+        <span className="pr-4 text-base font-medium tracking-tight text-zinc-950 sm:text-xl dark:text-white">
           {faq.question}
         </span>
         <motion.div
@@ -61,12 +61,12 @@ export default function FaqAnimated({
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="w-full bg-zinc-50 px-6 py-16 sm:py-32 sm:px-8 dark:bg-zinc-950">
+    <section id="faq" className="w-full bg-zinc-50 px-4 py-16 sm:px-8 sm:py-32 dark:bg-zinc-950">
       <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
         <span className={`${penScript.className} text-xl text-[#ed254e]`}>
           {section.sectionLabel}
         </span>
-        <h2 className="mt-6 text-4xl font-medium leading-snug tracking-tighter text-zinc-950 sm:text-5xl dark:text-white">
+        <h2 className="mt-6 text-3xl font-medium leading-snug tracking-tighter text-zinc-950 sm:text-5xl dark:text-white">
           {section.heading}
         </h2>
 

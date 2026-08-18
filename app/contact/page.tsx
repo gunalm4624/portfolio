@@ -2,7 +2,6 @@ import FadeIn from "../components/FadeIn";
 import Navbar from "../components/Navbar";
 import Faq from "../components/Faq";
 import Contact from "../components/Contact";
-import SmoothScroll from "../components/SmoothScroll";
 import ContactForm from "./ContactForm";
 import type { Metadata } from "next";
 
@@ -13,10 +12,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <SmoothScroll>
-      <div className="flex min-h-screen flex-col bg-white dark:bg-black">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-black">
         <Navbar />
-        <main className="flex-1 px-6 pb-24 pt-40 sm:px-8">
+        <main className="flex-1 px-4 pb-16 pt-32 sm:px-8 sm:pb-24 sm:pt-40">
           <FadeIn className="mx-auto max-w-3xl">
             <div className="mb-12 text-center">
               <h1 className="text-4xl font-medium leading-snug tracking-tighter text-zinc-950 sm:text-5xl dark:text-white">
@@ -32,6 +30,5 @@ export default function ContactPage() {
         <Faq />
         <Contact />
       </div>
-    </SmoothScroll>
   );
 }
