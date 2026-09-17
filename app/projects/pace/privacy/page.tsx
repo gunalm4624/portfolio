@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 
-import Footer from "../../../components/Footer";
-import Navbar from "../../../components/Navbar";
-
 export const metadata: Metadata = {
   title: "Pace — Privacy Policy",
   description:
@@ -143,9 +140,7 @@ const sections: { heading: string; body: React.ReactNode }[] = [
 export default function PacePrivacyPage() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-[#181510]">
-      <Navbar />
-
-      <main className="page-shell flex-1 px-4 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-24 md:px-20">
+      <main className="page-shell flex-1 px-4 py-16 sm:px-6 sm:py-24 md:px-20">
         <p className="font-mono text-sm text-[#181510]/50">Pace</p>
 
         <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-6xl">
@@ -190,8 +185,6 @@ export default function PacePrivacyPage() {
           </a>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
