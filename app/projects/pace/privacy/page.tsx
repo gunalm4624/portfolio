@@ -148,7 +148,7 @@ export default function PacePrivacyPage() {
         </h1>
 
         <p className="mt-4 font-mono text-sm text-[#181510]/50">
-          Effective date: February 2026
+          Effective date: September 17, 2026
         </p>
 
         <p className="mt-8 max-w-2xl text-base text-[#181510]/70 sm:text-lg">
