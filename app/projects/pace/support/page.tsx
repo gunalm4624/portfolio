@@ -113,7 +113,7 @@ export default function PaceSupportPage() {
           </a>
         </div>
 
-        <h2 className="mt-16 border-b-2 border-[#181510] pb-4 text-2xl font-extrabold tracking-tight sm:text-4xl">
+        <h2 className="mt-16 max-w-2xl border-b-2 border-[#181510] pb-4 text-2xl font-extrabold tracking-tight sm:text-4xl">
           Frequently asked questions
         </h2>
 
