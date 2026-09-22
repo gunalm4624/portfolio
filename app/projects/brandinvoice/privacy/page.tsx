@@ -88,11 +88,8 @@ const sections: { heading: string; body: React.ReactNode }[] = [
 export default function BrandInvoicePrivacyPage() {
   return (
     <div
-      className="flex min-h-screen flex-col text-[#04232C]"
-      style={{
-        fontFamily: SF_FONT_STACK,
-        background: "linear-gradient(180deg, #A0DFF1 0%, #F4F5F7 30%, #F4F5F7 100%)",
-      }}
+      className="flex min-h-screen flex-col bg-white text-[#04232C]"
+      style={{ fontFamily: SF_FONT_STACK }}
     >
       <main className="page-shell flex-1 px-4 py-16 sm:px-6 sm:py-24 md:px-20">
         <p className="text-sm font-medium tracking-wide" style={{ color: `${INK}80` }}>
