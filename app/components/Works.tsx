@@ -1,5 +1,6 @@
-import { ImagePlus } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 import FadeIn from "./FadeIn";
 
@@ -10,6 +11,7 @@ type Stat = {
 };
 
 type Project = {
+  year: string;
   tags: string[];
   title: string;
   description: string;
@@ -17,179 +19,180 @@ type Project = {
   accent: string;
   href: string;
   image?: string;
+  gallery?: string[];
   imageAlign?: "center" | "end";
+  soon?: string;
 };
 
 const projects: Project[] = [
   {
-    tags: ["Mareana", "AI Product"],
-    title: "Lumis — an AI assistant for pharma batch records",
+    year: "Oct 2026",
+    tags: ["Native iOS", "Swift", "Built with Claude Code"],
+    title: "Hydrabit — a hydration app where your organs fill with water",
     description:
-      "Pharma teams were losing hours digging through batch records and manufacturing data scattered across systems. I designed the assistant that lets them just ask.",
+      "Designed and built entirely with Claude Code, then soft-launched in a week, review time included. Every sip fills a human organ, and a fully automated GTM system helps it stand out in a crowded habit-tracker market.",
     stats: [
-      { value: "10+", label: "CDMOs & sponsors live", color: "#ed254e" },
-      { value: "48h → <5min", label: "batch record lookups", color: "#2F5DFF" },
-      { value: "In progress", label: "Sponsor & CDMO feedback", color: "#22C55E" },
+      { value: "1 week", label: "idea to soft launch", color: "#ed254e" },
     ],
-    accent: "#FBBF24",
-    href: "/work/lumis-chatbot",
-    image: "/work/lumis-chatbot/card.png",
+    accent: "#CDEBF0",
+    href: "/work/hydrabit",
+    gallery: [
+      "/work/hydrabit/iphone-1.png",
+      "/work/hydrabit/iphone-4.png",
+      "/work/hydrabit/iphone-6.png",
+    ],
   },
   {
-    tags: ["Mareana", "AI Design System"],
-    title: "AI Design System —\nso screens still look like Mareana",
+    year: "Sep 2026",
+    tags: ["Native iOS", "Swift", "Health & Fitness"],
+    title: "Pace — a walking app that tells me how many steps to take",
     description:
-      "LLM screens were drifting off-brand. I wrote the system as markdown the model has to read first, so engineering can ship the product instead of restyling it.",
+      "Built for myself in a week, as a single iPhone version. Based on my weight and timeframe, it suggests how many steps to walk each day, instead of just counting them.",
     stats: [
-      { value: "85%", label: "AI slop & inconsistent UI avoided", color: "#ed254e" },
-      { value: "Org-wide", label: "product & eng using this", color: "#2F5DFF" },
+      { value: "1 week", label: "built for myself, one version", color: "#ed254e" },
     ],
-    accent: "#181510",
-    href: "/work/ai-design-system",
-    image: "/work/ai-design-system/card.png",
+    accent: "#F9D3DA",
+    href: "/work/pace",
+    gallery: ["/work/pace/pace-1.png", "/work/pace/pace-3.png"],
   },
   {
-    tags: ["Independent", "Live product"],
-    title: "WorkRadius —\njobs near your commute, on a map",
+    year: "Sep 2026",
+    tags: ["Native iOS", "Swift", "Business"],
+    title: "BrandInvoice — branded invoices in under 20 seconds",
     description:
-      "My own product: a job platform for designers. Roles float on a map so you can hunt near your commute, apply, and track applications — built to make job hunting actually fun.",
+      "Built in a week for MSME businesses: an invoice maker that puts their own logo, signature and brand colour on every invoice, and keeps their clients in one place.",
     stats: [
-      { value: "15 days", label: "built and launched", color: "#ed254e" },
-      { value: "~42", label: "people using it for job hunt", color: "#2F5DFF" },
+      { value: "<20s", label: "to a branded invoice", color: "#ed254e" },
     ],
-    accent: "#F97316",
-    href: "/work/workradius",
-    image: "/work/workradius/workradius.webp",
+    accent: "#D3EAF7",
+    href: "/work/brandinvoice",
+    gallery: ["/work/brandinvoice/bi-3.png", "/work/brandinvoice/bi-1.png"],
   },
   {
-    tags: ["FSS", "SBI Merchant"],
-    title: "FSS — SBI merchant verification\nKYC the back office can finish",
+    year: "Nov 2026",
+    tags: ["Marketplace", "Mobile app"],
+    title: "WorkRadius — a local marketplace for service workers",
     description:
-      "Back-office for the SBI Merchant team: pull a case, check Aadhaar and PAN page by page, send blurry docs back, then approve the merchant.",
-    stats: [
-      { value: "40%", label: "review time reduced", color: "#ed254e" },
-    ],
-    accent: "#0054A6",
-    href: "/work/fss",
-    image: "/work/fss/card.webp",
+      "An app that connects people with local service workers nearby. I'm building it now and planning to launch in November.",
+    stats: [],
+    accent: "#FBE38A",
+    href: "#",
+    soon: "Launching November",
   },
 ];
 
-function ProjectVisual({ project, className = "" }: { project: Project; className?: string }) {
-  if (project.image) {
-    return (
-      <div
-        className={`flex h-full min-w-0 p-4 sm:p-8 ${project.imageAlign === "end" ? "items-end" : "items-center"} ${className}`}
-        style={{ backgroundColor: project.accent }}
-      >
-        <div className="w-full overflow-hidden rounded-[8px]">
-          <Image
-            src={project.image}
-            alt={`${project.title.replace(/\n/g, " ")} dashboard`}
-            width={1600}
-            height={1000}
-            sizes="(min-width: 640px) 50vw, 100vw"
-            unoptimized
-            className="h-auto w-full"
-          />
-        </div>
-      </div>
-    );
-  }
 
-  return <ImagePlaceholder accent={project.accent} className={className} />;
-}
-
-function ImagePlaceholder({ accent, className = "" }: { accent: string; className?: string }) {
+function Wrapper({ href, className, children }: { href?: string; className: string; children: ReactNode }) {
+  if (!href) return <div className={className}>{children}</div>;
   return (
-    <div
-      className={`relative flex min-h-[320px] items-center justify-center overflow-hidden sm:min-h-[480px] ${className}`}
-      style={{ backgroundColor: accent }}
-    >
-      <div className="flex flex-col items-center gap-3 rounded-2xl border-2 border-dashed border-[#181510]/25 px-8 py-10 text-[#181510]/60">
-        <ImagePlus size={28} strokeWidth={1.5} />
-        <span className="font-mono text-xs">Drop project image here</span>
-      </div>
-    </div>
-  );
-}
-
-function ProjectContent({ project, className = "" }: { project: Project; className?: string }) {
-  return (
-    <div className={`flex h-full min-w-0 flex-col justify-between gap-6 px-5 py-8 sm:px-12 sm:py-14 ${className}`}>
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-wrap items-center gap-2">
-          {project.tags.map((tag, index) =>
-            index === 0 ? (
-              <span
-                key={tag}
-                className="rounded-full bg-[#181510] px-4 py-1.5 font-mono text-xs text-[#F2EEE3]"
-              >
-                {tag}
-              </span>
-            ) : (
-              <span
-                key={tag}
-                className="rounded-full border border-[#181510]/20 px-4 py-1.5 font-mono text-xs text-[#181510]/70"
-              >
-                {tag}
-              </span>
-            ),
-          )}
-        </div>
-
-        <h3 className="text-2xl leading-[1.15] font-extrabold tracking-tight whitespace-pre-line sm:text-4xl">
-          {project.title}
-        </h3>
-
-        <p className="max-w-md text-base text-[#181510]/70 sm:text-lg">{project.description}</p>
-
-        <div className="flex flex-wrap gap-6 sm:gap-8">
-          {project.stats.map((stat) => (
-            <div key={stat.label} className="flex min-w-0 flex-col gap-1">
-              <span className="text-2xl font-extrabold" style={{ color: stat.color }}>
-                {stat.value}
-              </span>
-              <span className="font-mono text-xs text-[#181510]/60 sm:whitespace-nowrap">{stat.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <a
-        href={project.href}
-        rel="nofollow"
-        title="Read the full case study"
-        className="w-fit border-b-2 border-[#ed254e] font-mono text-sm font-bold text-[#181510] transition-opacity hover:opacity-70"
-      >
-        Read the full case study →
-      </a>
-    </div>
+    <a href={href} title="Read the full case study" className={className}>
+      {children}
+    </a>
   );
 }
 
 export default function Works() {
   return (
-    <section id="works" className="page-shell w-full bg-[#F2EEE3] px-4 py-16 text-[#181510] sm:px-6 sm:py-24 md:px-20">
+    <section id="works" className="page-shell w-full scroll-mt-6 px-5 py-16 font-body text-[#141413] sm:px-8 sm:py-24 md:px-10 lg:px-12">
       <FadeIn>
-        <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">Selected work</h2>
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <h2 className="font-display text-5xl tracking-[-0.04em] sm:text-6xl">Selected work</h2>
+          <p className="max-w-xs text-[15px] leading-relaxed text-[#6b6a66]">
+            Three apps shipped, designed and built end to end, and a fourth on the way.
+          </p>
+        </div>
       </FadeIn>
 
-      <div className="mt-8 flex flex-col gap-8 sm:mt-12 sm:gap-10">
-        {projects.map((project, index) => (
-          <FadeIn key={project.title}>
-            <div className="scp3 grid min-w-0 overflow-hidden rounded-[1.5rem] border border-[#181510] bg-white transition-shadow duration-200 hover:shadow-[0px_10px_0px_-4px_#9CA3AF] sm:rounded-[2rem] sm:grid-cols-2">
-              <ProjectVisual
-                project={project}
-                className={index % 2 === 0 ? "order-1 sm:order-2" : "order-1"}
-              />
-              <ProjectContent
-                project={project}
-                className={index % 2 === 0 ? "order-2 sm:order-1" : "order-2"}
-              />
-            </div>
-          </FadeIn>
-        ))}
+      <div className="mt-10 grid gap-4 md:grid-cols-2">
+        {projects.map((project, index) => {
+          const wide = index === 0 || (index === projects.length - 1 && index % 2 === 1);
+          const title = project.title.replace(/\n/g, " ");
+          const [name, ...rest] = title.split(/ [—-] /);
+          return (
+            <FadeIn key={project.href} className={wide ? "md:col-span-2" : ""}>
+              <Wrapper
+                href={project.soon ? undefined : project.href}
+                className={`group flex h-full flex-col gap-6 rounded-[2rem] bg-white p-3 ${
+                  project.soon ? "" : "transition-shadow duration-300 hover:shadow-[0_24px_48px_-24px_rgba(20,20,19,0.25)]"
+                }`}
+              >
+                <div
+                  className={`overflow-hidden rounded-[1.5rem] p-5 sm:p-10 ${wide ? "" : "sm:p-8"}`}
+                  style={{ backgroundColor: project.accent }}
+                >
+                  {project.soon ? (
+                    <div className="flex min-h-56 flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-[#141413]/20 px-6 py-10 text-center sm:min-h-72">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/70">
+                        <MapPin size={20} strokeWidth={1.5} />
+                      </span>
+                      <p className="font-display text-3xl tracking-[-0.03em] sm:text-4xl">{project.soon}</p>
+                      <p className="text-sm text-[#4c4b47]">Screens coming soon</p>
+                    </div>
+                  ) : project.gallery ? (
+                    <div className="flex items-start justify-center gap-3 sm:gap-8">
+                      {project.gallery.map((src, i) => (
+                        <Image
+                          key={src}
+                          src={src}
+                          alt={`${name} app screen ${i + 1}`}
+                          width={1000}
+                          height={2075}
+                          sizes="(min-width: 768px) 25vw, 33vw"
+                          className={`h-auto ${project.gallery!.length > 2 ? "w-[30%]" : "w-[42%]"} max-w-[300px] transition-transform duration-500 ${i === 1 ? "mt-6 sm:mt-10" : ""}`}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="overflow-hidden rounded-xl shadow-[0_20px_40px_-20px_rgba(20,20,19,0.35)] transition-transform duration-500 group-hover:scale-[1.015]">
+                      <Image
+                        src={project.image!}
+                        alt={`${name} case study preview`}
+                        width={1600}
+                        height={1000}
+                        sizes={wide ? "(min-width: 768px) 80vw, 100vw" : "(min-width: 768px) 40vw, 100vw"}
+                        unoptimized
+                        className="h-auto w-full"
+                      />
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex flex-col gap-4 px-3 pb-3 sm:px-4 sm:pb-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-baseline gap-3">
+                      <h3 className="font-display text-2xl tracking-[-0.03em] sm:text-3xl">{name}</h3>
+                      <span className="text-sm text-[#6b6a66]">{project.year}</span>
+                    </div>
+                    {project.soon ? null : (
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#F4F3EF] transition-colors group-hover:bg-[#141413] group-hover:text-white">
+                        <ArrowUpRight size={16} />
+                      </span>
+                    )}
+                  </div>
+                  <p className="max-w-2xl text-[15px] leading-relaxed text-[#6b6a66]">
+                    {rest.length ? `${rest.join(" — ").replace(/^./, (c) => c.toUpperCase())}. ` : ""}
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-[#F4F3EF] px-3.5 py-1.5 text-[13px] text-[#4c4b47]">
+                        {tag}
+                      </span>
+                    ))}
+                    {project.soon ? (
+                      <span className="rounded-full bg-[#141413] px-3.5 py-1.5 text-[13px] text-white">{project.soon}</span>
+                    ) : null}
+                    {project.stats[0] ? (
+                      <span className="rounded-full bg-[#E4F0E0] px-3.5 py-1.5 text-[13px] text-[#3b6f35]">
+                        {project.stats[0].value} {project.stats[0].label}
+                      </span>
+                    ) : null}
+                  </div>
+                </div>
+              </Wrapper>
+            </FadeIn>
+          );
+        })}
       </div>
     </section>
   );

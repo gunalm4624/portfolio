@@ -65,7 +65,7 @@ export default function WorkRadiusEmbed() {
       </div>
       <DialogContent
         style={embedTheme}
-        closeButtonClassName="top-0 right-0 size-9 translate-x-1/3 -translate-y-1/3 rounded-full border border-border bg-white text-[#181510] shadow-md hover:bg-white hover:text-[#181510]"
+        closeButtonClassName="top-0 right-0 size-9 translate-x-1/3 -translate-y-1/3 rounded-full border border-border bg-white text-[#141413] shadow-md hover:bg-white hover:text-[#141413]"
         className="flex h-[calc(100dvh-0.75rem)] max-h-[calc(100dvh-0.75rem)] w-[calc(100%-0.75rem)] max-w-[calc(100%-0.75rem)] flex-col overflow-hidden rounded-[16px] border-border bg-background p-1.5 text-foreground sm:h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-2rem)] sm:w-[calc(100%-2rem)] sm:max-w-[calc(100%-2rem)] sm:overflow-visible sm:rounded-[24px] sm:p-2"
       >
         <DialogTitle className="sr-only">WorkRadius — live product</DialogTitle>
@@ -74,7 +74,7 @@ export default function WorkRadiusEmbed() {
             href="https://www.workradius.in/"
             target="_blank"
             rel="noreferrer"
-            className="absolute top-3 right-12 z-10 inline-flex items-center gap-1 rounded-full bg-white/95 px-3 py-1.5 text-xs font-medium text-[#181510] shadow-sm"
+            className="absolute top-3 right-12 z-10 inline-flex items-center gap-1 rounded-full bg-white/95 px-3 py-1.5 text-xs font-medium text-[#141413] shadow-sm"
           >
             workradius.in <ArrowUpRight size={12} />
           </a>

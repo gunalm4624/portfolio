@@ -48,7 +48,7 @@ export default function LumisDemoTrigger() {
       </div>
       <DialogContent
         style={demoTheme}
-        closeButtonClassName="top-0 right-0 size-9 translate-x-1/3 -translate-y-1/3 rounded-full border border-border bg-white text-[#181510] shadow-md hover:bg-white hover:text-[#181510]"
+        closeButtonClassName="top-0 right-0 size-9 translate-x-1/3 -translate-y-1/3 rounded-full border border-border bg-white text-[#141413] shadow-md hover:bg-white hover:text-[#141413]"
         className="flex h-[calc(100dvh-0.75rem)] max-h-[calc(100dvh-0.75rem)] w-[calc(100%-0.75rem)] max-w-[calc(100%-0.75rem)] flex-col overflow-hidden rounded-[16px] border-border bg-background p-1.5 text-foreground sm:h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-2rem)] sm:w-[calc(100%-2rem)] sm:max-w-[calc(100%-2rem)] sm:overflow-visible sm:rounded-[24px] sm:p-2"
       >
         <DialogTitle className="sr-only">Lumis AI Assistant — interactive version</DialogTitle>

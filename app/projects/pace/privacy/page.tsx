@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import LegalPage from "../../../components/LegalPage";
+
 export const metadata: Metadata = {
   title: "Pace — Privacy Policy",
   description:
@@ -139,52 +141,23 @@ const sections: { heading: string; body: React.ReactNode }[] = [
 
 export default function PacePrivacyPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white text-[#181510]">
-      <main className="page-shell flex-1 px-4 py-16 sm:px-6 sm:py-24 md:px-20">
-        <p className="font-mono text-sm text-[#181510]/50">Pace</p>
-
-        <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-6xl">
-          Privacy Policy<span className="text-[#ed254e]">.</span>
-        </h1>
-
-        <p className="mt-4 font-mono text-sm text-[#181510]/50">
-          Effective date: September 17, 2026
-        </p>
-
-        <p className="mt-8 max-w-2xl text-base text-[#181510]/70 sm:text-lg">
-          Pace (&ldquo;the app&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;) is a walking and
-          weight-loss coaching app published by Gunal M. This policy explains what data the app
-          uses, how it&apos;s stored, and what — if anything — ever leaves your device.
-        </p>
-
-        <p className="mt-5 max-w-2xl text-base font-semibold text-[#181510] sm:text-lg">
-          The short version: Pace does not have user accounts, does not run its own servers, and
-          does not sell or share your personal data with anyone. Your health, location, and body
-          data never leave your device except to Apple Health and Apple&apos;s own services,
-          which you control.
-        </p>
-
-        <div className="mt-16 max-w-2xl divide-y divide-[#181510]/10">
-          {sections.map((section) => (
-            <section key={section.heading} className="py-10 first:pt-0">
-              <h2 className="text-xl font-extrabold tracking-tight sm:text-2xl">
-                {section.heading}
-              </h2>
-              <div className="mt-4 text-base text-[#181510]/70 sm:text-lg">{section.body}</div>
-            </section>
-          ))}
-        </div>
-
-        <div className="mt-4 max-w-2xl rounded-2xl border border-[#181510]/10 bg-[#F2EEE3] p-6 sm:p-8">
-          <p className="font-semibold text-[#181510]">Questions about this policy?</p>
-          <a
-            href="mailto:gunalm4624@gmail.com"
-            className="mt-2 inline-block font-mono text-sm text-[#181510] underline decoration-[#181510]/30 underline-offset-4 hover:text-[#ed254e]"
-          >
-            gunalm4624@gmail.com
-          </a>
-        </div>
-      </main>
-    </div>
+    <LegalPage
+      brand="Pace"
+      backHref="/work/pace"
+      title="Privacy Policy"
+      effective="September 17, 2026"
+      contactEmail="gunalm4624@gmail.com"
+      intro={
+        <>
+          Pace (&ldquo;the app&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;) is a walking and weight-loss coaching app published by Gunal M. This policy explains what data the app uses, how it&apos;s stored, and what, if anything, ever leaves your device.
+        </>
+      }
+      summary={
+        <>
+          Pace does not have user accounts, does not run its own servers, and does not sell or share your personal data with anyone. Your health, location, and body data never leave your device except to Apple Health and Apple&apos;s own services, which you control.
+        </>
+      }
+      sections={sections}
+    />
   );
 }

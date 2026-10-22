@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
-import { penScript } from "../fonts";
 import type { FaqItem, FaqSectionContent } from "../../sanity/lib/queries";
 
 function FaqItemCard({
@@ -16,18 +15,18 @@ function FaqItemCard({
   onClick: () => void;
 }) {
   return (
-    <div className="rounded-2xl border border-zinc-200 bg-white px-6 dark:border-zinc-800 dark:bg-zinc-900/50">
+    <div className="rounded-2xl bg-white px-6">
       <button
         className="flex w-full cursor-pointer items-center justify-between py-6 text-left focus:outline-none"
         onClick={onClick}
       >
-        <span className="pr-4 text-base font-medium tracking-tight text-zinc-950 sm:text-xl dark:text-white">
+        <span className="pr-4 font-display text-lg tracking-[-0.02em] text-[#141413] sm:text-xl">
           {faq.question}
         </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F4F3EF] text-[#6b6a66]"
         >
           <ChevronDown size={18} />
         </motion.div>
@@ -41,7 +40,7 @@ function FaqItemCard({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-base leading-relaxed text-zinc-500 dark:text-zinc-400">
+            <p className="pb-6 text-[15px] leading-relaxed text-[#6b6a66]">
               {faq.answer}
             </p>
           </motion.div>
@@ -61,16 +60,16 @@ export default function FaqAnimated({
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="w-full bg-zinc-50 px-4 py-16 sm:px-8 sm:py-32 dark:bg-zinc-950">
-      <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-        <span className={`${penScript.className} text-xl text-[#ed254e]`}>
-          {section.sectionLabel}
-        </span>
-        <h2 className="mt-6 text-3xl font-medium leading-snug tracking-tighter text-zinc-950 sm:text-5xl dark:text-white">
-          {section.heading}
-        </h2>
+    <section id="faq" className="page-shell w-full px-5 py-12 font-body sm:px-8 sm:py-16 md:px-10 lg:px-12">
+      <div className="flex flex-col gap-10">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <h2 className="max-w-2xl font-display text-4xl leading-[1.05] tracking-[-0.04em] sm:text-5xl">
+            {section.heading}
+          </h2>
+          <span className="text-[13px] text-[#6b6a66]">{section.sectionLabel}</span>
+        </div>
 
-        <div className="mt-16 flex w-full flex-col gap-4 text-left">
+        <div className="flex w-full flex-col gap-3 text-left">
           {faqs.map((faq, index) => (
             <FaqItemCard
               key={index}

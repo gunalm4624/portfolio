@@ -15,8 +15,8 @@ export default function CalBooking() {
       cal("ui", {
         theme: "light",
         cssVarsPerTheme: {
-          light: { "cal-brand": "#ed254e" },
-          dark: { "cal-brand": "#ed254e" },
+          light: { "cal-brand": "#141413" },
+          dark: { "cal-brand": "#141413" },
         },
         hideEventTypeDetails: false,
         layout: "month_view",
@@ -32,7 +32,7 @@ export default function CalBooking() {
     <div className="relative min-h-[600px] w-full">
       {!isReady && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <Loader2 className="animate-spin text-zinc-400" size={28} />
+          <Loader2 className="animate-spin text-[#6b6a66]" size={28} />
         </div>
       )}
       <Cal

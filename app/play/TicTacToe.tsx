@@ -113,10 +113,10 @@ export default function TicTacToe() {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <p className="font-mono text-sm text-[#181510]/70">{status}</p>
+    <div className="flex w-full max-w-sm flex-col items-center font-body">
+      <p className="rounded-full bg-[#F4F3EF] px-4 py-2 text-center text-sm text-[#141413]">{status}</p>
 
-      <div className="mt-6 grid w-full max-w-[min(100%,24rem)] grid-cols-3 overflow-hidden rounded-3xl border-2 border-[#181510] bg-[#181510]/15 gap-px">
+      <div className="mt-6 grid w-full grid-cols-3 gap-2">
         {board.map((cell, index) => {
           const isWinning = result?.line.includes(index) ?? false;
 
@@ -127,9 +127,9 @@ export default function TicTacToe() {
               onClick={() => handlePlay(index)}
               disabled={Boolean(cell) || isOver || isGunalsTurn}
               aria-label={cell ? `Cell ${index + 1}, ${cell}` : `Play cell ${index + 1}`}
-              className={`flex aspect-square w-full items-center justify-center text-4xl font-extrabold transition-colors sm:text-5xl ${
-                isWinning ? "bg-[#FBBF24]" : "bg-[#FAF8F1] enabled:hover:bg-[#F2EEE3]"
-              } ${cell === "X" ? "text-[#ed254e]" : "text-[#2F5DFF]"} ${
+              className={`flex aspect-square w-full items-center justify-center rounded-2xl font-display text-5xl transition-colors sm:text-6xl ${
+                isWinning ? "bg-[#FBE38A]" : "bg-[#F4F3EF] enabled:hover:bg-[#E9E8E2]"
+              } ${cell === "X" ? "text-[#141413]" : "text-[#E58A0B]"} ${
                 cell || isOver || isGunalsTurn ? "cursor-default" : "cursor-pointer"
               }`}
             >
@@ -142,10 +142,10 @@ export default function TicTacToe() {
       <button
         type="button"
         onClick={() => setBoard(emptyBoard)}
-        className="mt-8 flex h-12 cursor-pointer items-center gap-2 rounded-full border border-[#181510] px-6 font-mono text-sm font-bold text-[#181510] transition-colors hover:bg-[#181510] hover:text-[#F2EEE3]"
+        className="mt-6 inline-flex h-11 cursor-pointer items-center gap-2 rounded-full bg-[#141413] px-5 text-sm text-white transition-colors hover:bg-[#2f2f2c]"
       >
         Reset board
-        <RotateCcw size={16} />
+        <RotateCcw size={15} />
       </button>
     </div>
   );

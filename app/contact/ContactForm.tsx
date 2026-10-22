@@ -95,18 +95,18 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="rounded-3xl border border-zinc-200 bg-white p-8 sm:p-12 dark:border-zinc-800 dark:bg-zinc-950/50">
+    <div className="rounded-[2rem] bg-white p-6 sm:p-10">
       <Dialog open={isSubmitted} onOpenChange={setIsSubmitted}>
-        <DialogContent className="max-w-md rounded-3xl border-0 p-0 sm:max-w-md dark:bg-zinc-950">
+        <DialogContent className="max-w-md rounded-[2rem] border-0 bg-white p-0 sm:max-w-md">
           <div className="flex flex-col items-center px-8 py-10 text-center">
             <div className="h-16 w-16">
               <Lottie animationData={successAnimation} loop={false} autoplay />
             </div>
             <DialogHeader className="mt-6 items-center">
-              <DialogTitle className="text-2xl font-medium tracking-tight text-zinc-950 dark:text-white">
+              <DialogTitle className="font-display text-2xl font-normal tracking-[-0.03em] text-[#141413]">
                 Request received
               </DialogTitle>
-              <DialogDescription className="text-base text-zinc-500 dark:text-zinc-400">
+              <DialogDescription className="text-base text-[#6b6a66]">
                 Thanks for reaching out! We&apos;ll get back to you within 30 minutes to discuss your project.
               </DialogDescription>
             </DialogHeader>
@@ -118,16 +118,16 @@ export default function ContactForm() {
       </Dialog>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-base font-medium text-zinc-950 dark:text-zinc-300">Your Name <span className="text-red-500">*</span></FormLabel>
+                  <FormLabel className="text-sm font-normal text-[#141413]">Your Name <span className="text-red-500">*</span></FormLabel>
                   <FormControl>
-                    <Input placeholder="Gunal M" className="h-12 border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900" {...field} />
+                    <Input placeholder="Gunal M" className="h-12 rounded-xl border-0 bg-[#F4F3EF] px-4 shadow-none" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -138,9 +138,9 @@ export default function ContactForm() {
               name="businessName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-base font-medium text-zinc-950 dark:text-zinc-300">Business Name</FormLabel>
+                  <FormLabel className="text-sm font-normal text-[#141413]">Business Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Gunal Designs" className="h-12 border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900" {...field} />
+                    <Input placeholder="Gunal Designs" className="h-12 rounded-xl border-0 bg-[#F4F3EF] px-4 shadow-none" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -148,15 +148,15 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-base font-medium text-zinc-950 dark:text-zinc-300">Email Address <span className="text-red-500">*</span></FormLabel>
+                  <FormLabel className="text-sm font-normal text-[#141413]">Email Address <span className="text-red-500">*</span></FormLabel>
                   <FormControl>
-                    <Input placeholder="hello@gunalm.design" className="h-12 border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900" {...field} />
+                    <Input placeholder="hello@gunalm.design" className="h-12 rounded-xl border-0 bg-[#F4F3EF] px-4 shadow-none" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -167,9 +167,9 @@ export default function ContactForm() {
               name="contactNumber"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-base font-medium text-zinc-950 dark:text-zinc-300">Contact Number</FormLabel>
+                  <FormLabel className="text-sm font-normal text-[#141413]">Contact Number</FormLabel>
                   <FormControl>
-                    <Input placeholder="+1 (555) 000-0000" className="h-12 border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900" {...field} />
+                    <Input placeholder="+1 (555) 000-0000" className="h-12 rounded-xl border-0 bg-[#F4F3EF] px-4 shadow-none" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -182,7 +182,7 @@ export default function ContactForm() {
             name="about"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-base font-medium text-zinc-950 dark:text-zinc-300">What is your business about? <span className="text-red-500">*</span></FormLabel>
+                <FormLabel className="text-sm font-normal text-[#141413]">What is your business about? <span className="text-red-500">*</span></FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Tell us about your industry, audience, and goals..."
@@ -200,10 +200,10 @@ export default function ContactForm() {
             name="service"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-base font-medium text-zinc-950 dark:text-zinc-300">Service Needed <span className="text-red-500">*</span></FormLabel>
+                <FormLabel className="text-sm font-normal text-[#141413]">Service Needed <span className="text-red-500">*</span></FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="!h-12 w-full border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900">
+                    <SelectTrigger className="!h-12 w-full rounded-xl border-0 bg-[#F4F3EF] px-4 shadow-none">
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                   </FormControl>
@@ -228,7 +228,7 @@ export default function ContactForm() {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="h-14 w-full cursor-pointer rounded-full bg-zinc-950 text-lg font-normal text-white transition-all duration-300 hover:bg-[#ed254e] disabled:cursor-not-allowed disabled:opacity-70 dark:bg-white dark:text-zinc-950 dark:hover:bg-[#ed254e] dark:hover:text-white shadow-[0_2px_1px_rgba(0,0,0,0.09),0_4px_2px_rgba(0,0,0,0.09),0_8px_4px_rgba(0,0,0,0.09),0_16px_8px_rgba(0,0,0,0.09),0_32px_16px_rgba(0,0,0,0.09)] hover:shadow-[0_2px_1px_rgba(237,37,78,0.25),0_4px_2px_rgba(237,37,78,0.22),0_8px_4px_rgba(237,37,78,0.18),0_16px_8px_rgba(237,37,78,0.15),0_32px_16px_rgba(237,37,78,0.12)]"
+            className="h-12 w-full cursor-pointer rounded-full bg-[#141413] text-sm font-normal text-white transition-colors duration-300 hover:bg-[#2f2f2c] disabled:cursor-not-allowed disabled:opacity-70"
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center gap-2">
@@ -236,7 +236,7 @@ export default function ContactForm() {
                 Sending...
               </span>
             ) : (
-              "Let's Make It Happen"
+              "Send message"
             )}
           </Button>
         </form>

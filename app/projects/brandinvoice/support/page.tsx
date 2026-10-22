@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
+import { ArrowUpRight, ChevronDown, Mail } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "BrandInvoice — Support",
   description: "Help and frequently asked questions for the BrandInvoice invoicing app.",
 };
-
-const SF_FONT_STACK =
-  '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif';
-
-const BRAND = "#12B0DD";
-const INK = "#04232C";
 
 const faqs: { question: string; answer: React.ReactNode }[] = [
   {
@@ -83,8 +78,7 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
         that needs a connection is verifying an Essential purchase with the App Store. See our{" "}
         <Link
           href="/projects/brandinvoice/privacy"
-          className="underline underline-offset-4"
-          style={{ textDecorationColor: `${INK}4D` }}
+          className="text-[#141413] underline decoration-[#141413]/30 underline-offset-4 hover:decoration-[#141413]"
         >
           Privacy Policy
         </Link>{" "}
@@ -105,80 +99,74 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
 
 export default function BrandInvoiceSupportPage() {
   return (
-    <div
-      className="flex min-h-screen flex-col bg-white text-[#04232C]"
-      style={{ fontFamily: SF_FONT_STACK }}
-    >
-      <main className="page-shell flex-1 px-4 py-16 sm:px-6 sm:py-24 md:px-20">
-        <p className="text-sm font-medium tracking-wide" style={{ color: `${INK}80` }}>
-          BrandInvoice
-        </p>
+    <div className="flex min-h-screen flex-col font-body text-[#141413]">
+      <main className="page-shell flex-1 px-5 py-4 sm:px-8 md:px-10 lg:px-12">
+        <div className="grid gap-4 lg:grid-cols-[1.2fr_1fr]">
+          <div className="flex min-h-80 flex-col justify-between gap-12 rounded-[2rem] bg-white p-6 sm:p-10">
+            <Link
+              href="/work/brandinvoice"
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-[#F4F3EF] px-4 py-2 text-sm transition-colors hover:bg-[#E9E8E2]"
+            >
+              BrandInvoice
+              <ArrowUpRight size={14} />
+            </Link>
+            <div className="flex flex-col gap-5">
+              <h1 className="font-display text-6xl leading-[1] tracking-[-0.045em] sm:text-7xl">Support</h1>
+              <p className="max-w-lg text-lg leading-relaxed text-[#6b6a66]">
+                Need help with BrandInvoice? Start with the questions below, or email us directly and we&apos;ll get back to you, usually within a day or two.
+              </p>
+            </div>
+          </div>
 
-        <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-6xl">
-          Support<span style={{ color: BRAND }}>.</span>
-        </h1>
-
-        <p className="mt-8 max-w-2xl text-base sm:text-lg" style={{ color: `${INK}B3` }}>
-          Need help with BrandInvoice? Start with the questions below, or email us directly and
-          we&apos;ll get back to you, usually within a day or two.
-        </p>
-
-        <div
-          className="mt-8 max-w-2xl rounded-2xl border p-6 sm:p-8"
-          style={{ borderColor: `${INK}1A`, backgroundColor: "#E4F6FC" }}
-        >
-          <p className="font-semibold" style={{ color: INK }}>
-            Contact
-          </p>
-          <a
-            href="mailto:support@brandinvoice.app"
-            className="mt-2 inline-block text-sm underline underline-offset-4"
-            style={{ color: INK, textDecorationColor: `${INK}4D` }}
-          >
-            support@brandinvoice.app
-          </a>
+          <div className="flex min-h-80 flex-col justify-between gap-12 rounded-[2rem] bg-[#141413] p-6 text-white sm:p-10">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
+              <Mail size={17} strokeWidth={1.5} />
+            </span>
+            <div className="flex flex-col gap-4">
+              <p className="text-[13px] text-white/50">Contact</p>
+              <a
+                href="mailto:support@brandinvoice.app"
+                className="font-display text-2xl tracking-[-0.03em] break-all underline decoration-white/30 underline-offset-4 hover:decoration-white sm:text-3xl"
+              >
+                support@brandinvoice.app
+              </a>
+              <p className="text-sm text-white/60">Include your device model and iOS version, if you can.</p>
+            </div>
+          </div>
         </div>
 
-        <h2
-          className="mt-16 max-w-2xl border-b-2 pb-4 text-2xl font-bold tracking-tight sm:text-4xl"
-          style={{ borderColor: INK }}
-        >
-          Frequently asked questions
-        </h2>
+        <section className="mt-4 flex flex-col gap-4">
+          <div className="rounded-3xl bg-white p-6 sm:p-10">
+            <h2 className="font-display text-4xl tracking-[-0.04em] sm:text-5xl">Frequently asked questions</h2>
+          </div>
 
-        <div className="mt-8 max-w-2xl divide-y" style={{ borderColor: `${INK}1A` }}>
-          {faqs.map((faq) => (
-            <details key={faq.question} className="group py-6 first:pt-0">
-              <summary className="cursor-pointer list-none text-base font-semibold sm:text-lg">
-                <span className="flex items-center justify-between gap-4">
+          <div className="flex flex-col gap-3">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group rounded-2xl bg-white px-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-6 font-display text-lg tracking-[-0.02em] sm:text-xl [&::-webkit-details-marker]:hidden">
                   {faq.question}
-                  <span
-                    className="shrink-0 transition-transform group-open:rotate-45"
-                    style={{ color: `${INK}66` }}
-                  >
-                    +
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F4F3EF] text-[#6b6a66] transition-transform group-open:rotate-180">
+                    <ChevronDown size={18} />
                   </span>
-                </span>
-              </summary>
-              <div className="mt-3 text-base sm:text-lg" style={{ color: `${INK}B3` }}>
-                {faq.answer}
-              </div>
-            </details>
-          ))}
-        </div>
+                </summary>
+                <div className="pb-6 text-[15px] leading-relaxed text-[#6b6a66] sm:text-base">{faq.answer}</div>
+              </details>
+            ))}
+          </div>
 
-        <p className="mt-16 max-w-2xl text-base sm:text-lg" style={{ color: `${INK}B3` }}>
-          Still stuck? Email{" "}
-          <a
-            href="mailto:support@brandinvoice.app"
-            className="underline underline-offset-4"
-            style={{ textDecorationColor: `${INK}4D` }}
-          >
-            support@brandinvoice.app
-          </a>{" "}
-          with a short description of what happened and, if possible, your device model and iOS
-          version — it helps track things down faster.
-        </p>
+          <div className="rounded-3xl bg-white p-6 sm:p-10">
+            <p className="max-w-2xl text-[15px] leading-relaxed text-[#6b6a66] sm:text-base">
+              Still stuck? Email{" "}
+              <a
+                href="mailto:support@brandinvoice.app"
+                className="text-[#141413] underline decoration-[#141413]/30 underline-offset-4 hover:decoration-[#141413]"
+              >
+                support@brandinvoice.app
+              </a>{" "}
+              with a short description of what happened and, if possible, your device model and iOS version. It helps track things down faster.
+            </p>
+          </div>
+        </section>
       </main>
     </div>
   );

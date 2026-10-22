@@ -13,32 +13,33 @@ export const metadata: Metadata = {
 
 export default function PlayPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F2EEE3] text-[#181510]">
+    <div className="flex min-h-screen flex-col font-body text-[#141413]">
       <Navbar />
 
-      <main className="page-shell flex-1 px-4 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-24 md:px-20">
-        <FadeIn>
-          <p className="font-mono text-sm text-[#181510]/50">Let&apos;s Play With Me</p>
-        </FadeIn>
+      <main className="page-shell flex-1 px-5 pt-4 pb-12 sm:px-8 md:px-10 lg:px-12">
+        <div className="grid gap-4 md:grid-cols-2">
+          <FadeIn>
+            <div className="flex h-full min-h-80 flex-col justify-between gap-12 rounded-[2rem] bg-white p-6 sm:p-8 lg:p-10">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-[#FBE38A] px-3.5 py-1.5 text-[13px]">
+                Let&apos;s play
+              </span>
+              <div className="flex flex-col gap-5">
+                <h1 className="font-display text-5xl leading-[1.02] tracking-[-0.045em] text-balance md:text-6xl lg:text-7xl">
+                  Tic-tac-toe, <span className="text-[#141413]/45">on the house.</span>
+                </h1>
+                <p className="max-w-md text-lg leading-relaxed text-[#6b6a66]">
+                  A short break from case studies. You&apos;re X, Gunal is playing O. Take turns and see who removes the last bit of friction.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
 
-        <FadeIn>
-          <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-balance sm:text-6xl md:text-7xl">
-            Tic-tac-toe, on the house.
-          </h1>
-        </FadeIn>
-
-        <FadeIn>
-          <p className="mt-6 max-w-xl text-base text-[#181510]/70 sm:text-lg">
-            A short break from case studies. You&apos;re X, Gunal is playing O — take turns and see
-            who removes the last bit of friction.
-          </p>
-        </FadeIn>
-
-        <FadeIn>
-          <div className="mt-16">
-            <TicTacToe />
-          </div>
-        </FadeIn>
+          <FadeIn delay={0.08}>
+            <div className="flex h-full items-center justify-center rounded-[2rem] bg-white p-6 sm:p-8 lg:p-10">
+              <TicTacToe />
+            </div>
+          </FadeIn>
+        </div>
       </main>
 
       <Footer />

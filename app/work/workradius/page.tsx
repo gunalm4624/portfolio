@@ -41,7 +41,7 @@ const product = [
 
 function SectionHeading({ children }: { children: string }) {
   return (
-    <h2 className="border-b-2 border-[#181510] pb-4 text-2xl font-extrabold tracking-tight sm:text-4xl">
+    <h2 className="border-b-2 border-[#141413] pb-4 text-2xl font-extrabold tracking-tight sm:text-4xl">
       {children}
     </h2>
   );
@@ -49,14 +49,14 @@ function SectionHeading({ children }: { children: string }) {
 
 export default function WorkRadiusCaseStudy() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F2EEE3] text-[#181510]">
+    <div className="flex min-h-screen flex-col bg-[#EFEEEA] text-[#141413]">
       <Navbar />
 
       <main className="page-shell flex-1 px-4 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-24 md:px-20">
         <FadeIn>
           <Link
             href="/#works"
-            className="inline-flex items-center gap-2 font-mono text-sm text-[#181510]/60 transition-colors hover:text-[#181510]"
+            className="inline-flex items-center gap-2 font-mono text-sm text-[#141413]/60 transition-colors hover:text-[#141413]"
           >
             <ArrowLeft size={16} />
             Back to work
@@ -65,16 +65,16 @@ export default function WorkRadiusCaseStudy() {
 
         <FadeIn>
           <div className="mt-8 flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-[#181510] px-4 py-1.5 font-mono text-xs text-[#F2EEE3]">
+            <span className="rounded-full bg-[#141413] px-4 py-1.5 font-mono text-xs text-[#EFEEEA]">
               Independent
             </span>
-            <span className="rounded-full border border-[#181510]/20 px-4 py-1.5 font-mono text-xs text-[#181510]/70">
+            <span className="rounded-full border border-[#141413]/20 px-4 py-1.5 font-mono text-xs text-[#141413]/70">
               Live product
             </span>
-            <span className="rounded-full border border-[#181510]/20 px-4 py-1.5 font-mono text-xs text-[#181510]/70">
+            <span className="rounded-full border border-[#141413]/20 px-4 py-1.5 font-mono text-xs text-[#141413]/70">
               Job search
             </span>
-            <span className="rounded-full border border-[#181510]/20 px-4 py-1.5 font-mono text-xs text-[#181510]/70">
+            <span className="rounded-full border border-[#141413]/20 px-4 py-1.5 font-mono text-xs text-[#141413]/70">
               Case Study
             </span>
           </div>
@@ -87,7 +87,7 @@ export default function WorkRadiusCaseStudy() {
         </FadeIn>
 
         <FadeIn>
-          <p className="mt-6 max-w-2xl text-base text-[#181510]/70 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base text-[#141413]/70 sm:text-lg">
             WorkRadius is my own product: a commute-first job platform for designers. Jobs float on
             a map, you apply from there, and you track every application — instead of drowning in
             lists.
@@ -100,7 +100,7 @@ export default function WorkRadiusCaseStudy() {
               href="https://www.workradius.in/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 border-b-2 border-[#ed254e] font-mono text-sm font-bold text-[#181510] transition-opacity hover:opacity-70"
+              className="inline-flex items-center gap-2 border-b-2 border-[#ed254e] font-mono text-sm font-bold text-[#141413] transition-opacity hover:opacity-70"
             >
               Visit workradius.in <ArrowUpRight size={16} />
             </a>
@@ -111,7 +111,7 @@ export default function WorkRadiusCaseStudy() {
           <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
             {metaRow.map((item) => (
               <div key={item.label} className="flex flex-col gap-1">
-                <span className="font-mono text-xs text-[#181510]/50">{item.label}</span>
+                <span className="font-mono text-xs text-[#141413]/50">{item.label}</span>
                 <span className="text-sm font-bold">{item.value}</span>
               </div>
             ))}
@@ -119,13 +119,13 @@ export default function WorkRadiusCaseStudy() {
         </FadeIn>
 
         <FadeIn>
-          <div className="mt-10 grid grid-cols-1 gap-8 rounded-3xl border border-[#181510]/25 bg-[#FAF8F1] p-5 sm:grid-cols-2 sm:p-8">
+          <div className="mt-10 grid grid-cols-1 gap-8 rounded-3xl border border-[#141413]/25 bg-[#FAF8F1] p-5 sm:grid-cols-2 sm:p-8">
             {stats.map((stat) => (
               <div key={stat.label} className="flex flex-col gap-1">
                 <span className="text-3xl font-extrabold sm:text-4xl" style={{ color: stat.color }}>
                   {stat.value}
                 </span>
-                <span className="font-mono text-xs text-[#181510]/60 sm:whitespace-nowrap">
+                <span className="font-mono text-xs text-[#141413]/60 sm:whitespace-nowrap">
                   {stat.label}
                 </span>
               </div>
@@ -144,7 +144,7 @@ export default function WorkRadiusCaseStudy() {
             <SectionHeading>Why it exists</SectionHeading>
           </FadeIn>
           <FadeIn>
-            <p className="mt-6 text-base leading-[1.8] text-[#181510]/80 sm:text-lg">
+            <p className="mt-6 text-base leading-[1.8] text-[#141413]/80 sm:text-lg">
               Job boards treat commute as a filter buried in a sidebar. For designers hunting in a
               city, distance is the job. I wanted hunting to feel closer to exploring a map than
               grinding a spreadsheet — something you&apos;d actually open again.
@@ -159,10 +159,10 @@ export default function WorkRadiusCaseStudy() {
           <FadeIn>
             <ul className="mt-6 flex flex-col gap-3">
               {product.map((point) => (
-                <li key={point} className="flex gap-3 text-base text-[#181510]/80 sm:text-lg">
+                <li key={point} className="flex gap-3 text-base text-[#141413]/80 sm:text-lg">
                   <span
                     aria-hidden="true"
-                    className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#181510]/40"
+                    className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#141413]/40"
                   />
                   {point}
                 </li>
@@ -176,14 +176,14 @@ export default function WorkRadiusCaseStudy() {
             <SectionHeading>Stack</SectionHeading>
           </FadeIn>
           <FadeIn>
-            <div className="mt-6 grid divide-y divide-[#181510]/20 overflow-hidden rounded-3xl border border-[#181510]/25 bg-[#FAF8F1] sm:grid-cols-2 lg:grid-cols-5 lg:divide-x lg:divide-y-0">
+            <div className="mt-6 grid divide-y divide-[#141413]/20 overflow-hidden rounded-3xl border border-[#141413]/25 bg-[#FAF8F1] sm:grid-cols-2 lg:grid-cols-5 lg:divide-x lg:divide-y-0">
               {stack.map((item, index) => (
                 <div key={item.step} className="flex flex-col gap-2 px-6 py-6">
-                  <span className="font-mono text-xs text-[#181510]/40">
+                  <span className="font-mono text-xs text-[#141413]/40">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="text-lg font-extrabold tracking-tight">{item.step}</span>
-                  <p className="text-sm leading-[1.7] text-[#181510]/70">{item.detail}</p>
+                  <p className="text-sm leading-[1.7] text-[#141413]/70">{item.detail}</p>
                 </div>
               ))}
             </div>

@@ -11,38 +11,31 @@ export const metadata: Metadata = {
     "Side quests, offcuts, and interface studies — the design work that never shipped but was worth making.",
 };
 
-const allExplorations = explorations;
-
 export default function ExplorationsPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F2EEE3] text-[#181510]">
+    <div className="flex min-h-screen flex-col text-[#141413]">
       <Navbar />
 
-      <main className="page-shell flex-1 px-4 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-24 md:px-20">
+      <main className="page-shell flex-1 px-5 pt-4 pb-12 font-body sm:px-8 md:px-10 lg:px-12">
         <FadeIn>
-          <p className="font-mono text-sm text-[#181510]/50">Explorations</p>
-        </FadeIn>
-
-        <FadeIn>
-          <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-balance sm:text-6xl md:text-7xl">
-            Told you there were more.
-          </h1>
-        </FadeIn>
-
-        <FadeIn>
-          <p className="mt-6 max-w-xl text-base text-[#181510]/70 sm:text-lg">
-            Side quests, offcuts, and interface studies. Not every one of these became a product —
-            most of them just made the next one better.
-          </p>
-        </FadeIn>
-
-        <FadeIn>
-          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {allExplorations.map((item) => (
-              <ExplorationTile key={item.id} item={item} />
-            ))}
+          <div className="flex flex-col gap-6 rounded-[2rem] bg-white p-6 sm:p-10">
+            <span className="text-[13px] text-[#6b6a66]">Explorations</span>
+            <h1 className="max-w-4xl font-display text-5xl leading-[1.02] tracking-[-0.045em] text-balance sm:text-7xl">
+              Told you there were <span className="text-[#141413]/45">more.</span>
+            </h1>
+            <p className="max-w-xl text-lg leading-relaxed text-[#6b6a66]">
+              Side quests, offcuts, and interface studies. Not every one of these became a product, and most of them just made the next one better.
+            </p>
           </div>
         </FadeIn>
+
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {explorations.map((item, i) => (
+            <FadeIn key={item.id} delay={(i % 2) * 0.06}>
+              <ExplorationTile item={item} />
+            </FadeIn>
+          ))}
+        </div>
       </main>
 
       <Footer />

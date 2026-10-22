@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist_Mono, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -8,6 +8,11 @@ import SmoothScroll from "./components/SmoothScroll";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage-grotesque",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -80,9 +85,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bricolageGrotesque.variable} ${geistMono.variable} h-full overflow-x-clip antialiased`}
+      className={`${bricolageGrotesque.variable} ${geistMono.variable} ${inter.variable} h-full overflow-x-clip antialiased`}
     >
-      <body className="flex min-h-full min-w-0 flex-col overflow-x-clip bg-[#F2EEE3]">
+      <body className="flex min-h-full min-w-0 flex-col overflow-x-clip bg-[#EFEEEA]">
         <Script id="schema-org" type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",

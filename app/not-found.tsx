@@ -1,37 +1,34 @@
-import CtaButton from "./components/CtaButton";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 export default function NotFound() {
   return (
-    <div className="flex flex-1 flex-col items-center bg-white dark:bg-black w-full">
+    <div className="flex min-h-screen w-full flex-col font-body text-[#141413]">
       <Navbar />
-      <section className="bg-background min-h-[80vh] w-full flex flex-col items-center justify-center pt-24 sm:pt-32">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <div className="w-full sm:w-10/12 md:w-8/12 text-center">
-            <div
-              className="bg-[url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif)] h-[250px] sm:h-[350px] md:h-[400px] bg-center bg-no-repeat bg-contain"
-              aria-hidden="true"
+      <main className="page-shell flex flex-1 px-5 pt-4 pb-4 sm:px-8 md:px-10 lg:px-12">
+        <div className="flex min-h-[60vh] w-full flex-col justify-between gap-12 rounded-[2rem] bg-white p-6 sm:p-10">
+          <span className="text-[13px] text-[#6b6a66]">Error 404</span>
+          <div className="flex flex-col items-start gap-6">
+            <h1 className="font-display text-6xl leading-[1] tracking-[-0.045em] sm:text-8xl">
+              Looks like you&apos;re <span className="text-[#141413]/45">lost.</span>
+            </h1>
+            <p className="max-w-md text-lg leading-relaxed text-[#6b6a66]">
+              The page you are looking for is not available.
+            </p>
+            <Link
+              href="/"
+              className="inline-flex h-11 items-center gap-2 rounded-full bg-[#141413] px-5 text-sm text-white transition-colors hover:bg-[#2f2f2c]"
             >
-            </div>
-
-            <div className="mt-[-50px]">
-              <h3 className="text-2xl text-foreground sm:text-3xl font-medium tracking-tight mb-4">
-                Looks like you're lost
-              </h3>
-              <p className="mb-6 text-muted-foreground sm:mb-5">
-                The page you are looking for is not available!
-              </p>
-              
-              <div className="flex justify-center mt-5">
-                <CtaButton label="Go to Home" href="/" />
-              </div>
-            </div>
+              Go to home
+              <ArrowUpRight size={14} />
+            </Link>
           </div>
         </div>
-      </div>
-    </section>
+      </main>
+      <Footer />
     </div>
   );
 }
-

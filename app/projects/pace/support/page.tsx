@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowUpRight, ChevronDown, Mail } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -68,7 +69,7 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
         walk ends. See our{" "}
         <Link
           href="/projects/pace/privacy"
-          className="underline decoration-[#181510]/30 underline-offset-4 hover:text-[#ed254e]"
+          className="text-[#141413] underline decoration-[#141413]/30 underline-offset-4 hover:decoration-[#141413]"
         >
           Privacy Policy
         </Link>{" "}
@@ -90,60 +91,74 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
 
 export default function PaceSupportPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white text-[#181510]">
-      <main className="page-shell flex-1 px-4 py-16 sm:px-6 sm:py-24 md:px-20">
-        <p className="font-mono text-sm text-[#181510]/50">Pace</p>
+    <div className="flex min-h-screen flex-col font-body text-[#141413]">
+      <main className="page-shell flex-1 px-5 py-4 sm:px-8 md:px-10 lg:px-12">
+        <div className="grid gap-4 lg:grid-cols-[1.2fr_1fr]">
+          <div className="flex min-h-80 flex-col justify-between gap-12 rounded-[2rem] bg-white p-6 sm:p-10">
+            <Link
+              href="/work/pace"
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-[#F4F3EF] px-4 py-2 text-sm transition-colors hover:bg-[#E9E8E2]"
+            >
+              Pace
+              <ArrowUpRight size={14} />
+            </Link>
+            <div className="flex flex-col gap-5">
+              <h1 className="font-display text-6xl leading-[1] tracking-[-0.045em] sm:text-7xl">Support</h1>
+              <p className="max-w-lg text-lg leading-relaxed text-[#6b6a66]">
+                Need help with Pace? Start with the questions below, or email me directly and I&apos;ll get back to you, usually within a day or two.
+              </p>
+            </div>
+          </div>
 
-        <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-6xl">
-          Support<span className="text-[#ed254e]">.</span>
-        </h1>
-
-        <p className="mt-8 max-w-2xl text-base text-[#181510]/70 sm:text-lg">
-          Need help with Pace? Start with the questions below, or email me directly and
-          I&apos;ll get back to you, usually within a day or two.
-        </p>
-
-        <div className="mt-8 max-w-2xl rounded-2xl border border-[#181510]/10 bg-[#F2EEE3] p-6 sm:p-8">
-          <p className="font-semibold text-[#181510]">Contact</p>
-          <a
-            href="mailto:gunalm4624@gmail.com"
-            className="mt-2 inline-block font-mono text-sm text-[#181510] underline decoration-[#181510]/30 underline-offset-4 hover:text-[#ed254e]"
-          >
-            gunalm4624@gmail.com
-          </a>
+          <div className="flex min-h-80 flex-col justify-between gap-12 rounded-[2rem] bg-[#141413] p-6 text-white sm:p-10">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
+              <Mail size={17} strokeWidth={1.5} />
+            </span>
+            <div className="flex flex-col gap-4">
+              <p className="text-[13px] text-white/50">Contact</p>
+              <a
+                href="mailto:gunalm4624@gmail.com"
+                className="font-display text-2xl tracking-[-0.03em] break-all underline decoration-white/30 underline-offset-4 hover:decoration-white sm:text-3xl"
+              >
+                gunalm4624@gmail.com
+              </a>
+              <p className="text-sm text-white/60">Include your device model and iOS version, if you can.</p>
+            </div>
+          </div>
         </div>
 
-        <h2 className="mt-16 max-w-2xl border-b-2 border-[#181510] pb-4 text-2xl font-extrabold tracking-tight sm:text-4xl">
-          Frequently asked questions
-        </h2>
+        <section className="mt-4 flex flex-col gap-4">
+          <div className="rounded-3xl bg-white p-6 sm:p-10">
+            <h2 className="font-display text-4xl tracking-[-0.04em] sm:text-5xl">Frequently asked questions</h2>
+          </div>
 
-        <div className="mt-8 max-w-2xl divide-y divide-[#181510]/10">
-          {faqs.map((faq) => (
-            <details key={faq.question} className="group py-6 first:pt-0">
-              <summary className="cursor-pointer list-none text-base font-semibold sm:text-lg">
-                <span className="flex items-center justify-between gap-4">
+          <div className="flex flex-col gap-3">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group rounded-2xl bg-white px-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-6 font-display text-lg tracking-[-0.02em] sm:text-xl [&::-webkit-details-marker]:hidden">
                   {faq.question}
-                  <span className="shrink-0 text-[#181510]/40 transition-transform group-open:rotate-45">
-                    +
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F4F3EF] text-[#6b6a66] transition-transform group-open:rotate-180">
+                    <ChevronDown size={18} />
                   </span>
-                </span>
-              </summary>
-              <div className="mt-3 text-base text-[#181510]/70 sm:text-lg">{faq.answer}</div>
-            </details>
-          ))}
-        </div>
+                </summary>
+                <div className="pb-6 text-[15px] leading-relaxed text-[#6b6a66] sm:text-base">{faq.answer}</div>
+              </details>
+            ))}
+          </div>
 
-        <p className="mt-16 max-w-2xl text-base text-[#181510]/70 sm:text-lg">
-          Still stuck? Email{" "}
-          <a
-            href="mailto:gunalm4624@gmail.com"
-            className="underline decoration-[#181510]/30 underline-offset-4 hover:text-[#ed254e]"
-          >
-            gunalm4624@gmail.com
-          </a>{" "}
-          with a short description of what happened and, if possible, your device model and iOS
-          version — it helps track things down faster.
-        </p>
+          <div className="rounded-3xl bg-white p-6 sm:p-10">
+            <p className="max-w-2xl text-[15px] leading-relaxed text-[#6b6a66] sm:text-base">
+              Still stuck? Email{" "}
+              <a
+                href="mailto:gunalm4624@gmail.com"
+                className="text-[#141413] underline decoration-[#141413]/30 underline-offset-4 hover:decoration-[#141413]"
+              >
+                gunalm4624@gmail.com
+              </a>{" "}
+              with a short description of what happened and, if possible, your device model and iOS version. It helps track things down faster.
+            </p>
+          </div>
+        </section>
       </main>
     </div>
   );
