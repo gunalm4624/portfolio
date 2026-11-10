@@ -3,19 +3,19 @@ import { ArrowUpRight, ChevronDown, Mail } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Pace — Support",
-  description: "Help and frequently asked questions for the Pace walking app.",
+  title: "Everstep — Support",
+  description: "Help and frequently asked questions for the Everstep walking app.",
 };
 
 const faqs: { question: string; answer: React.ReactNode }[] = [
   {
-    question: "Pace isn't showing my steps / activity",
+    question: "Everstep isn't showing my steps / activity",
     answer: (
       <p>
         Open Settings → Health &amp; devices and check that Apple Health is connected. If it
         shows &ldquo;No data yet,&rdquo; go to iOS Settings → Privacy &amp; Security → Health →
-        Pace and make sure the categories you want (Steps, Distance, Heart Rate, etc.) are turned
-        on. Then pull to refresh or tap &ldquo;Sync now&rdquo; in Pace&apos;s Settings.
+        Everstep and make sure the categories you want (Steps, Distance, Heart Rate, etc.) are turned
+        on. Then pull to refresh or tap &ldquo;Sync now&rdquo; in Everstep&apos;s Settings.
       </p>
     ),
   },
@@ -36,18 +36,29 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
       <p>
         Go to Settings → Reminders and pick a new time. If you&apos;ve never enabled
         notifications, you&apos;ll be asked to allow them first — you can also turn them on later
-        from iOS Settings → Notifications → Pace.
+        from iOS Settings → Notifications → Everstep.
       </p>
     ),
   },
   {
-    question: "I purchased Pace Essential but it's not unlocked",
+    question: "I subscribed to Everstep Essential but it's not unlocked",
     answer: (
       <p>
-        Go to Settings → Subscription and tap &ldquo;Restore purchases.&rdquo; This re-checks
-        your purchase with the App Store using the Apple ID you bought it with. Make sure
-        you&apos;re signed into the same Apple ID you used to buy it. If it still doesn&apos;t
-        unlock, email us with your purchase date and we&apos;ll help sort it out.
+        Open Everstep, go to Settings and tap &ldquo;Restore purchases.&rdquo; This re-checks your
+        purchase with the App Store using the Apple ID you bought it with, so make sure you&apos;re
+        signed into that same Apple ID. If it still doesn&apos;t unlock, email me with your
+        purchase date and I&apos;ll help sort it out.
+      </p>
+    ),
+  },
+  {
+    question: "How does the free trial work, and how do I cancel?",
+    answer: (
+      <p>
+        New subscribers get a 3-day free trial. You&apos;re charged for the plan you chose when it
+        ends, unless you cancel first. To cancel, open iOS Settings → your name → Subscriptions →
+        Everstep Essential → Cancel. Deleting the app does not cancel a subscription. The
+        lifetime option is a one-time payment, with nothing to cancel.
       </p>
     ),
   },
@@ -55,20 +66,19 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
     question: "I switched phones / reinstalled the app — how do I get Essential back?",
     answer: (
       <p>
-        Reinstall Pace, and either go through onboarding or open Settings → Subscription →
-        Restore purchases (signed into the same Apple ID). Essential is a one-time purchase tied
-        to your Apple ID, not your device, so it carries over.
+        Reinstall Everstep, then open Settings → Restore purchases (signed into the same Apple ID).
+        Essential is tied to your Apple ID, not your device, so it carries over.
       </p>
     ),
   },
   {
-    question: "Does Pace track my location all the time?",
+    question: "Does Everstep track my location all the time?",
     answer: (
       <p>
         No. Location is only used while you&apos;re actively recording a walk, and stops when the
         walk ends. See our{" "}
         <Link
-          href="/projects/pace/privacy"
+          href="/projects/everstep/privacy"
           className="text-[#141413] underline decoration-[#141413]/30 underline-offset-4 hover:decoration-[#141413]"
         >
           Privacy Policy
@@ -81,7 +91,7 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
     question: "How do I delete my data?",
     answer: (
       <p>
-        Go to Settings → Delete My Data. This permanently removes your profile, weight history,
+        Go to Settings → Delete account. This permanently removes your profile, weight history,
         walk history, streaks, and plan from your device. It doesn&apos;t touch anything already
         saved in Apple Health — manage that separately in the Health app.
       </p>
@@ -89,7 +99,7 @@ const faqs: { question: string; answer: React.ReactNode }[] = [
   },
 ];
 
-export default function PaceSupportPage() {
+export default function EverstepSupportPage() {
   return (
     <div className="flex min-h-screen flex-col font-body text-[#141413]">
       <main className="page-shell flex-1 px-5 py-4 sm:px-8 md:px-10 lg:px-12">
@@ -99,13 +109,13 @@ export default function PaceSupportPage() {
               href="/work/pace"
               className="inline-flex w-fit items-center gap-2 rounded-full bg-[#F4F3EF] px-4 py-2 text-sm transition-colors hover:bg-[#E9E8E2]"
             >
-              Pace
+              Everstep
               <ArrowUpRight size={14} />
             </Link>
             <div className="flex flex-col gap-5">
               <h1 className="font-display text-6xl leading-[1] tracking-[-0.045em] sm:text-7xl">Support</h1>
               <p className="max-w-lg text-lg leading-relaxed text-[#6b6a66]">
-                Need help with Pace? Start with the questions below, or email me directly and I&apos;ll get back to you, usually within a day or two.
+                Need help with Everstep? Start with the questions below, or email me directly and I&apos;ll get back to you, usually within a day or two.
               </p>
             </div>
           </div>

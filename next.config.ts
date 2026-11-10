@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // The app was called Pace before it became Everstep; the old support and privacy addresses keep working.
+  async redirects() {
+    return [
+      {
+        source: "/projects/pace/:path*",
+        destination: "/projects/everstep/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

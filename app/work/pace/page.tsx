@@ -142,7 +142,7 @@ export default function PaceCaseStudy() {
                     <ArrowUpRight size={14} />
                   </a>
                   <Link
-                    href="/projects/pace/support"
+                    href="/projects/everstep/support"
                     className="inline-flex h-11 items-center gap-2 rounded-full bg-[#F4F3EF] px-5 text-sm transition-colors hover:bg-[#E9E8E2]"
                   >
                     Support
