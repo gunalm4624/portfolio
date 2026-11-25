@@ -61,7 +61,7 @@ const faqs: { question: string; answer: ReactNode }[] = [
     ),
   },
   {
-    question: "I bought Roomy Pro but it isn't unlocked",
+    question: "I bought Roomy Plus but it isn't unlocked",
     answer: (
       <p>
         Open Roomy, then Settings, and tap Restore Purchases. Make sure you are signed in with the Apple ID you bought it

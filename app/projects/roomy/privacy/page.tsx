@@ -78,12 +78,12 @@ const sections: { heading: string; body: ReactNode }[] = [
     body: (
       <>
         <p>
-          Roomy is free to download. Roomy Pro is available as an annual subscription or a one-time lifetime purchase.
+          Roomy is free to download. Roomy Plus is available as an annual subscription or a one-time lifetime purchase.
           Payments are handled entirely by Apple through the App Store. We never see or store your payment details.
         </p>
         <p className="mt-4">
           Purchases are managed with RevenueCat, which receives your App Store purchase receipt and an anonymous app
-          identifier so Roomy Pro can be unlocked on your devices and restored if you reinstall. It does not receive your
+          identifier so Roomy Plus can be unlocked on your devices and restored if you reinstall. It does not receive your
           name, photos or contacts.
         </p>
       </>
